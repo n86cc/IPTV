@@ -1,0 +1,47 @@
+name: EPG guide (guide.xml.gz)
+
+# Bygger guide.xml.gz til Kodi (IPTV Simple, epgUrl) ud fra offentlige guides, med kanal-id'er
+# omskrevet til tvg-id'erne i de tre lister. Listerne ændres ikke. Se .iptv-sync/README.md.
+# Kører hver 4. time, fordi Pluto/Samsung-guiderne kun dækker ca. 12-18 timer frem.
+# Resultatet lægges som eneste commit på branchen "epg" (force-push, ingen historik), så repoet ikke vokser.
+# URL: https://raw.githubusercontent.com/n86cc/IPTV/epg/guide.xml.gz
+on:
+  schedule:
+    - cron: '20 */4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: epg-guide
+  cancel-in-progress: false
+
+jobs:
+  guide:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Byg guide.xml.gz
+        run: |
+          mkdir -p /tmp/out
+          python3 .iptv-sync/build_guide.py --repo-dir . --out /tmp/out/guide.xml.gz --report /tmp/out/guide-report.json
+
+      - name: Udgiv på branchen epg
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd /tmp/out
+          printf '# EPG\n\nAutogenereret af .github/workflows/epg-guide.yml på main. Brug i Kodi IPTV Simple (epgUrl):\n\nhttps://raw.githubusercontent.com/%s/epg/guide.xml.gz\n\nTal: guide-report.json\n' "$GITHUB_REPOSITORY" > README.md
+          git init -q -b epg
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "EPG guide $(date -u '+%Y-%m-%d %H:%M') UTC"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" epg

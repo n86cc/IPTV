@@ -34,3 +34,17 @@
 - `report.json` viser nattens tal: antal fra upstream, udeladt som død, endeligt antal, køretid og ændringer.
 - `seed/` bruges én gang til at sætte tidligere tabte kanaler (fx AXN Asia Malaysia) ind igen, hvis de virker.
   Mappen slettes efter brug.
+
+## EPG-guide (guide.xml.gz)
+- `.github/workflows/epg-guide.yml` kører `build_guide.py` hver 4. time (kl. xx:20 UTC) og kan også startes manuelt.
+  Den kører så tit, fordi Pluto- og Samsung-guiderne kun dækker ca. 12-18 timer frem.
+- Guiden ligger på branchen `epg` som eneste commit (den force-pushes, så repoet ikke vokser med 12 MB pr. kørsel):
+  **https://raw.githubusercontent.com/n86cc/IPTV/epg/guide.xml.gz**. Tallene står i `guide-report.json` samme sted.
+- Brug URLen som `epgUrl` i alle tre IPTV Simple-instanser i Kodi. Listerne og deres `x-tvg-url`-header ændres **ikke**.
+- Kilder: i.mjh.nz Pluto TV og Samsung TV Plus samt epgshare01 DK1 og ALL_SOURCES1.
+- Kanal-id'erne i guiden omskrives til listernes tvg-id'er, så Kodi kan matche dem 1:1:
+  1. Pluto og Samsung matches på stream-URLen (`jmp2.uk/plu-<id>`, `jmp2.uk/stvp-<id>`).
+  2. Andre kanaler matches på tvg-id uden `@feed`, hvor kun bogstaver og tal sammenlignes. Fx `DR1.dk@SD` = `DR1.dk` og
+     `ORF1.at@SD` = `ORF.1.at`. DK1 bruges før ALL_SOURCES.
+- Kun kanaler fra de tre lister kommer med, og kun programmer fra 12 timer tilbage til 7 dage frem.
+  Hvis guiden har under 20.000 programmer, bliver den ikke udgivet.
