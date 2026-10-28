@@ -26,7 +26,7 @@ jobs:
           python-version: '3.12'
 
       - name: Opdater playlister
-        run: python3 .iptv-sync/sync.py --in-place
+        run: python3 .iptv-sync/sync.py --in-place --drop-dead
 
       - name: Commit og push hvis listerne er ændret
         run: |
