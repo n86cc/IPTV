@@ -1,7 +1,8 @@
 name: IPTV sync fra iptv-org
 
-# Daglig opdatering af iptv-org-dansk-all.m3u og iptv-org-index-all.m3u
-# ud fra iptv-org (countries/dk.m3u og index.m3u) med Bros formatering.
+# Daglig opdatering af iptv-org-dansk-all.m3u, iptv-org-index-all.m3u og sport.m3u
+# ud fra iptv-org (countries/dk.m3u, index.m3u, categories/sports.m3u) med Bros formatering.
+# Alle stream-URLer tjekkes; døde kanaler udelades (se .iptv-sync/README.md).
 # cron er i UTC: 02:00 UTC = 03:00 dansk vintertid / 04:00 dansk sommertid.
 on:
   schedule:
@@ -18,6 +19,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
 
@@ -26,7 +28,7 @@ jobs:
           python-version: '3.12'
 
       - name: Opdater playlister
-        run: python3 .iptv-sync/sync.py --in-place --drop-dead
+        run: python3 .iptv-sync/sync.py --in-place --check-links
 
       - name: Commit og push hvis listerne er ændret
         run: |
