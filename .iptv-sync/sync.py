@@ -11,6 +11,10 @@ Playlists (target file <- iptv-org source):
         header: his current header line is kept (upstream dropped x-tvg-url
         after 2026-10-13; it was #EXTM3U x-tvg-url=".../guide.xml.gz" then)
 
+  sport.m3u               <- https://iptv-org.github.io/iptv/categories/sports.m3u
+        group-title removed and group-title="Sport" put right after the
+        duration (#EXTINF:-1 group-title="Sport" tvg-id=...), header as upstream
+
 Merge policy (default):
   * channels he already has: URL, logo, user-agent/referrer, EXTVLCOPT and
     name follow upstream; categories follow upstream.
@@ -50,6 +54,7 @@ RAW = "https://raw.githubusercontent.com/n86cc/IPTV/main/"
 TARGETS = {
     "iptv-org-dansk-all.m3u": {"src": "countries/dk.m3u", "cats": False},
     "iptv-org-index-all.m3u": {"src": "index.m3u", "cats": True},
+    "sport.m3u": {"src": "categories/sports.m3u", "cats": False, "main": "Sport", "group_first": True},
 }
 CAT_MAP = {"Undefined": "General"}
 EXTINF = re.compile(r'^#EXTINF:(-?\d+)((?:\s+[\w-]+="[^"]*")*)\s*,(.*)$')
@@ -121,31 +126,34 @@ def units_from_upstream(text, cats):
     return header, out
 
 
-def units_from_target(text, cats):
-    """His format: All-block followed by its category blocks (same channel)."""
+def units_from_target(text, cats, main="All"):
+    """His format: main-group block (All/Sport) followed by its category blocks (same channel)."""
     header, blocks = parse_blocks(text)
     out, cur = [], None
     for b in blocks:
         s = split_block(b)
         same = cur is not None and all(cur[k] == s[k] for k in ("dur", "attrs", "name", "extra", "url"))
-        if cats and same and s["group"] != "All":
+        if cats and same and s["group"] != main:
             cur["groups"] += (s["group"],)
             continue
         g = s.pop("group")
-        s["groups"] = () if (g == "All" or not cats) else (g,)
-        if g != "All":
-            s["_noall"] = True  # entry without All block (manual edit)
+        s["groups"] = () if g == main else (g,)
+        if g != main:
+            s["_noall"] = True  # entry without the main group block (manual edit)
         out.append(s)
         cur = s
     return header, out
 
 
-def render(header, units, cats, nl="\n"):
+def render(header, units, cats, nl="\n", main="All", group_first=False):
     out = [header]
     for u in units:
-        groups = (["All"] if not u.get("_noall") else []) + (list(u["groups"]) if cats else [])
+        groups = ([main] if not u.get("_noall") else []) + list(u["groups"])
         for g in groups:
-            out.append(f'#EXTINF:{u["dur"]}{u["attrs"]} group-title="{g}",{u["name"]}')
+            if group_first:
+                out.append(f'#EXTINF:{u["dur"]} group-title="{g}"{u["attrs"]},{u["name"]}')
+            else:
+                out.append(f'#EXTINF:{u["dur"]}{u["attrs"]} group-title="{g}",{u["name"]}')
             out.extend(u["extra"])
             out.append(u["url"])
     return nl.join(out) + nl
@@ -208,12 +216,13 @@ def sync_one(fname, cfg, cur_text, up_text, base_text, drop_removed, pure, probe
     cats = cfg["cats"]
     nl = "\r\n" if "\r\n" in cur_text.split("\n", 1)[0] + "\n" else "\n"  # keep his line endings
     up_header, U = units_from_upstream(up_text, cats)
-    cur_header, C = units_from_target(cur_text, cats)
+    main, gf = cfg.get("main", "All"), cfg.get("group_first", False)
+    cur_header, C = units_from_target(cur_text, cats, main)
     if pure:
-        return render(up_header, U, cats, nl), {"mode": "pure", "upstream": len(U)}
+        return render(up_header, U, cats, nl, main, gf), {"mode": "pure", "upstream": len(U)}
     if base_text is None:
         base_text = cur_text  # first run: assume his file == our base
-    _, B = units_from_target(base_text, cats)
+    _, B = units_from_target(base_text, cats, main)
 
     # manual edits: his units vs base
     cb = match(C, B)
@@ -305,7 +314,7 @@ def sync_one(fname, cfg, cur_text, up_text, base_text, drop_removed, pure, probe
     stats["final"] = len(final)
     stats["kept_removed"] = stats["removed_upstream"] - stats.get("dropped", 0)
     header = cur_header  # his header (x-tvg-url etc.) is kept; upstream header only reported
-    return render(header, final, cats, nl), {"stats": stats, "changes": changes,
+    return render(header, final, cats, nl, main, gf), {"stats": stats, "changes": changes,
                                          "header_up": up_header, "header_cur": cur_header}
 
 
