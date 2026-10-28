@@ -1,0 +1,41 @@
+name: IPTV sync fra iptv-org
+
+# Daglig opdatering af iptv-org-dansk-all.m3u og iptv-org-index-all.m3u
+# ud fra iptv-org (countries/dk.m3u og index.m3u) med Bros formatering.
+# cron er i UTC: 02:00 UTC = 03:00 dansk vintertid / 04:00 dansk sommertid.
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: iptv-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Opdater playlister
+        run: python3 .iptv-sync/sync.py --in-place
+
+      - name: Commit og push hvis listerne er ændret
+        run: |
+          if [ -z "$(git status --porcelain -- '*.m3u' .iptv-sync/state)" ]; then
+            echo "Ingen ændringer i playlisterne."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- '*.m3u' .iptv-sync
+          git commit -m "Auto-opdatering af IPTV-lister fra iptv-org ($(date -u +%Y-%m-%d))"
+          git push
