@@ -12,6 +12,8 @@ Playlists (target file <- iptv-org source):
         after 2026-10-13; it was #EXTM3U x-tvg-url=".../guide.xml.gz" then)
 
   sport.m3u               <- https://iptv-org.github.io/iptv/categories/sports.m3u
+        + every index.m3u entry with "Sports" among its ';' categories whose
+        URL is missing from sports.m3u (union, dedup by URL, sports.m3u order);
         group-title removed and group-title="Sport" put right after the
         duration (#EXTINF:-1 group-title="Sport" tvg-id=...), header as upstream
 
@@ -54,7 +56,8 @@ RAW = "https://raw.githubusercontent.com/n86cc/IPTV/main/"
 TARGETS = {
     "iptv-org-dansk-all.m3u": {"src": "countries/dk.m3u", "cats": False},
     "iptv-org-index-all.m3u": {"src": "index.m3u", "cats": True},
-    "sport.m3u": {"src": "categories/sports.m3u", "cats": False, "main": "Sport", "group_first": True},
+    "sport.m3u": {"src": "categories/sports.m3u", "union_from": ("index.m3u", "Sports"),
+                  "cats": False, "main": "Sport", "group_first": True},
 }
 CAT_MAP = {"Undefined": "General"}
 EXTINF = re.compile(r'^#EXTINF:(-?\d+)((?:\s+[\w-]+="[^"]*")*)\s*,(.*)$')
@@ -318,6 +321,48 @@ def sync_one(fname, cfg, cur_text, up_text, base_text, drop_removed, pure, probe
                                          "header_up": up_header, "header_cur": cur_header}
 
 
+def load_upstream(src, upstream_dir=None):
+    if upstream_dir:
+        p = os.path.join(upstream_dir, src)
+        if not os.path.exists(p):
+            p = os.path.join(upstream_dir, src.replace("/", "_"))
+        return read(p)
+    return read(UP + src)
+
+
+def union_category(main_text, index_text, cat):
+    """main list (e.g. categories/sports.m3u) + every entry of index.m3u whose
+    ';'-separated group-title contains `cat` and whose URL is not already in the
+    main list. Extra entries go right after their predecessor in index order
+    (both lists are sorted the same way upstream), else at the end."""
+    nl = "\r\n" if "\r\n" in main_text else "\n"
+    header, mb = parse_blocks(main_text)
+    _, ib = parse_blocks(index_text)
+    urls = {b[-1] for b in mb}
+    pos = {b[-1]: i for i, b in enumerate(mb)}
+    after = {}
+    prev = -1
+    n_cat = extra = 0
+    for b in ib:
+        g = re.search(r'group-title="([^"]*)"', b[0])
+        if not g or cat not in g.group(1).split(";"):
+            continue
+        n_cat += 1
+        if b[-1] in urls:
+            prev = pos[b[-1]]
+            continue
+        urls.add(b[-1])
+        after.setdefault(prev, []).append(b)
+        extra += 1
+    out = [header] + [l for b in after.get(-1, []) for l in b]
+    for i, b in enumerate(mb):
+        out += b
+        for e in after.get(i, []):
+            out += e
+    info = {"main_list": len(mb), "index_" + cat: n_cat, "only_in_index": extra, "union": len(mb) + extra}
+    return nl.join(out) + nl, info
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     here = os.path.dirname(os.path.abspath(__file__))
@@ -355,13 +400,12 @@ def main():
     for n in names:
         cfg = TARGETS[n]
         cur = read(os.path.join(a.repo_dir, n) if a.repo_dir else RAW + n)
-        if a.upstream_dir:
-            p = os.path.join(a.upstream_dir, cfg["src"])
-            if not os.path.exists(p):
-                p = os.path.join(a.upstream_dir, cfg["src"].replace("/", "_"))
-            up = read(p)
-        else:
-            up = read(UP + cfg["src"])
+        up = load_upstream(cfg["src"], a.upstream_dir)
+        uinfo = None
+        if cfg.get("union_from"):
+            src2, cat = cfg["union_from"]
+            up, uinfo = union_category(up, load_upstream(src2, a.upstream_dir), cat)
+            print(n, "union:", json.dumps(uinfo))
         bp = os.path.join(a.state, n + ".base")
         base = read(bp) if os.path.exists(bp) else None
         text, rep = sync_one(n, cfg, cur, up, base, a.drop_removed, a.pure, a.probe_removed, a.drop_dead)
@@ -370,6 +414,8 @@ def main():
         if a.in_place:  # what we wrote becomes the base for detecting his later manual edits
             with open(bp, "w", encoding="utf-8", newline="\n") as f:
                 f.write(text)
+        if uinfo:
+            rep["union"] = uinfo
         report[n] = rep
         s = rep.get("stats", rep)
         print(n, json.dumps(s, ensure_ascii=False))
