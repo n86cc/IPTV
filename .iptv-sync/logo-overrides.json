@@ -1,0 +1,278 @@
+{
+ "_comment": "Logo fallbacks keyed by full tvg-id (with @feed). Used by sync.py only when the channel's tvg-logo is empty or one of 'replaces' (verified dead, 404/410/imgur-removed, checked 2026-10-28). See README.",
+ "AmericasVoice.us@SD": {
+  "logo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Logo_Real_America%27s_Voice.svg/960px-Logo_Real_America%27s_Voice.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "source": "Wikimedia Commons (Wikidata P154)"
+ },
+ "AntennaTre.it@SD": {
+  "logo": "https://antennatre.medianordest.it/wp-content/uploads/2020/10/A3Logo120.png",
+  "source": "official site"
+ },
+ "ChosenTVEnglish.ng@SD": {
+  "logo": "https://tlccrm.org/wp-content/uploads/2023/05/Chosen-Website-Logo-Main.png",
+  "source": "official site"
+ },
+ "CosmosTv.ar@HD": {
+  "logo": "https://cdn4.fmcosmos.com/s4/2025/11/03/fmcosmos/images/15/92/159284_a18e887e336fef3bc6b188314a173ce10cbe5157966e839517e2b0428d7aed46/xs.webp",
+  "source": "iptv-org/database",
+  "replaces": [
+   "https://i0.wp.com/fmcosmos.com/wp-content/uploads/2021/11/COSMOS-TV.png"
+  ]
+ },
+ "CosmosTv.ar@SD": {
+  "logo": "https://cdn4.fmcosmos.com/s4/2025/11/03/fmcosmos/images/15/92/159284_a18e887e336fef3bc6b188314a173ce10cbe5157966e839517e2b0428d7aed46/xs.webp",
+  "source": "iptv-org/database",
+  "replaces": [
+   "https://i0.wp.com/fmcosmos.com/wp-content/uploads/2021/11/COSMOS-TV.png"
+  ]
+ },
+ "Diema.bg@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/bulgaria/diema-bg.png",
+  "source": "tv-logo/tv-logos"
+ },
+ "DostTV.tr@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/turkey/dost-tv-tr.png",
+  "source": "tv-logo/tv-logos",
+  "replaces": [
+   "https://dosttv.com/wp-content/uploads/2022/02/dost_logo.png"
+  ]
+ },
+ "DoveChannel.us@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/dove-channel-us.png",
+  "source": "tv-logo/tv-logos"
+ },
+ "DreamWorksChannelAsia.us@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/hong-kong/dreamworks-channel-hk.png",
+  "source": "tv-logo/tv-logos"
+ },
+ "EKids.bg@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/bulgaria/ekids-bg.png",
+  "source": "tv-logo/tv-logos"
+ },
+ "Eurocom.bg@SD": {
+  "logo": "https://eurocom.bg/wp-content/uploads/2024/07/eurocom-header-logo-300x169.png",
+  "source": "official site"
+ },
+ "GMSTV.ge@SD": {
+  "logo": "https://gmstv.ge/wp-content/uploads/2023/08/Logo-1-300x300.png",
+  "source": "official site"
+ },
+ "HarvestUSA.in@SD": {
+  "logo": "https://harvesttv.in/wp-content/uploads/2021/06/For-Web-Logo-new.jpg",
+  "source": "official site"
+ },
+ "History.bg@SD": {
+  "logo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/History_%282021%29.svg/960px-History_%282021%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "source": "Wikimedia Commons (Wikidata P154)"
+ },
+ "HTVCMovies.vn@SD": {
+  "logo": "https://raw.githubusercontent.com/HaNoiIPTV/HaNoiIPTV.m3u/refs/heads/master/HTVC%20Phim%20HD.png",
+  "source": "iptv-org/database"
+ },
+ "ID.bg@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/international/investigation-discovery-int.png",
+  "source": "tv-logo/tv-logos"
+ },
+ "IranNationalRevolutionTV.us@HD": {
+  "logo": "https://iranopasmigirim.com/images/tv-logo.png",
+  "source": "official site"
+ },
+ "JewelryTV2.us@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/jtv-us.png",
+  "source": "tv-logo/tv-logos"
+ },
+ "KontraChannel.gr@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/greece/kontra-channel-gr.png",
+  "source": "tv-logo/tv-logos",
+  "replaces": [
+   "https://kontrachannel.gr/images/kontrachannel24.png"
+  ]
+ },
+ "LifevisionTV.us@SD": {
+  "logo": "https://files.stablerack.com/WebFiles/84972/2022-TopLogo.jpg",
+  "source": "official site"
+ },
+ "LokshahiNews.in@SD": {
+  "logo": "https://dtil.tmsimg.com/assets/s143284_ld_h15_aa.png?lock=720x540",
+  "source": "iptv-org/database",
+  "replaces": [
+   "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_LOKSHAHI/images/LOGO_HD/image.png"
+  ]
+ },
+ "LoveWorldUK.ng@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/loveworld-uk.png",
+  "source": "tv-logo/tv-logos",
+  "replaces": [
+   "https://i.imgur.com/JgHbDmF.png"
+  ]
+ },
+ "LoveWorldUSA.ng@SD": {
+  "logo": "https://loveworldusa.org/wp-content/uploads/2026/07/cropped-Loveworld-USA-Logo-12-24-22-Rev1-WIDE-Ver-700x161-1.png",
+  "source": "official site"
+ },
+ "M6Music.fr@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/m6-music-fr.png",
+  "source": "tv-logo/tv-logos"
+ },
+ "MTVDating.us@BR": {
+  "logo": "https://i.imgur.com/dD7WbQC.png",
+  "source": "iptv-org/database",
+  "replaces": [
+   "https://images.pluto.tv/channels/6851bb3426beced4f2f67ee6/colorLogoPNG_1750686926779.png"
+  ]
+ },
+ "MTVDating.us@CA": {
+  "logo": "https://i.imgur.com/dD7WbQC.png",
+  "source": "iptv-org/database",
+  "replaces": [
+   "https://images.pluto.tv/channels/6851bb3426beced4f2f67ee6/colorLogoPNG_1750686926779.png"
+  ]
+ },
+ "MTVDating.us@LatAm": {
+  "logo": "https://i.imgur.com/dD7WbQC.png",
+  "source": "iptv-org/database",
+  "replaces": [
+   "https://images.pluto.tv/channels/6851bb3426beced4f2f67ee6/colorLogoPNG_1750686926779.png"
+  ]
+ },
+ "MuslimNetworkTV.us@SD": {
+  "logo": "https://www.muslimnetwork.tv/wp-content/uploads/2020/12/MNTV_White_Logo@2x.png",
+  "source": "official site"
+ },
+ "News1.th@SD": {
+  "logo": "https://news1live.com/images/news1-logo-3x.png",
+  "source": "official site"
+ },
+ "Noticias16.do@SD": {
+  "logo": "https://noticias16.com.do/wp-content/uploads/2025/06/cropped-logo-noticias16.webp",
+  "source": "official site"
+ },
+ "Nova.rs@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/serbia/nova-tv-rs.png",
+  "source": "tv-logo/tv-logos",
+  "replaces": [
+   "https://i.imgur.com/sU8UPPY.png"
+  ]
+ },
+ "NovoTempo.br@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/brazil/novo-tempo-br.png",
+  "source": "tv-logo/tv-logos"
+ },
+ "OmroepBrabant.nl@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/netherlands/omroep-brabant-nl.png",
+  "source": "tv-logo/tv-logos",
+  "replaces": [
+   "https://i.imgur.com/KLYsKKC.png"
+  ]
+ },
+ "OmroepBrabantRadio.nl@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/netherlands/omroep-brabant-nl.png",
+  "source": "tv-logo/tv-logos"
+ },
+ "PlusTLT.bo@SD": {
+  "logo": "https://plustlt.tv/wp-content/uploads/2022/04/LOGO-PLUSTLT.png",
+  "source": "official site"
+ },
+ "Radio538.nl@SD": {
+  "logo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Logo_Radio538.svg/960px-Logo_Radio538.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "source": "Wikimedia Commons (Wikidata P154)",
+  "replaces": [
+   "https://i.imgur.com/sd7BX9H.png"
+  ]
+ },
+ "RedeSeculo21.br@SD": {
+  "logo": "https://upload.wikimedia.org/wikipedia/pt/b/b4/Rede_S%C3%A9culo_21.jpg",
+  "source": "Wikipedia pt (infobox)"
+ },
+ "RevryQueer.us@SD": {
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/7/71/Revry_Logo_-_Background.jpg",
+  "source": "Wikimedia Commons (enwiki infobox)"
+ },
+ "RING.bg@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/bulgaria/ring-bg.png",
+  "source": "tv-logo/tv-logos"
+ },
+ "RMCDecouverte.fr@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/rmc-decouverte-fr.png",
+  "source": "tv-logo/tv-logos",
+  "replaces": [
+   "https://upload.wikimedia.org/wikipedia/fr/thumb/b/b3/RMC_D%C3%A9couverte_logo_2017.svg/960px-RMC_D%C3%A9couverte_logo_2017.svg.png"
+  ]
+ },
+ "RMCStory.fr@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/rmc-story-fr.png",
+  "source": "tv-logo/tv-logos",
+  "replaces": [
+   "https://upload.wikimedia.org/wikipedia/fr/thumb/4/43/Logo_RMC_Story_2025.png/960px-Logo_RMC_Story_2025.png"
+  ]
+ },
+ "RugbyPassTV.uk@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/international/rugby-pass-tv-int.png",
+  "source": "tv-logo/tv-logos"
+ },
+ "SenderNeuJerusalem.de@SD": {
+  "logo": "https://gabriele.tv/de/theme/images/de_snj_logo.png",
+  "source": "official site"
+ },
+ "ShenzhenSatelliteTV.cn@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/hong-kong/shenzhen-tv-hk.png",
+  "source": "tv-logo/tv-logos"
+ },
+ "ShubhTV.in@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/india/shubh-tv-in.png",
+  "source": "tv-logo/tv-logos",
+  "replaces": [
+   "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SHUBH_TV/images/LOGO_HD/image.png"
+  ]
+ },
+ "TabbarHits.in@SD": {
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Tabbar_Hits.png",
+  "source": "iptv-org/database",
+  "replaces": [
+   "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_TABBAR_HITS/images/LOGO_HD/image.png"
+  ]
+ },
+ "TeleXitos.us@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/telexitos-us.png",
+  "source": "tv-logo/tv-logos"
+ },
+ "Thats80s.uk@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/thats-80s-uk.png",
+  "source": "tv-logo/tv-logos"
+ },
+ "Totalmusic2000s.uk@HD": {
+  "logo": "https://static.elektamedia.com/ch/tmc_00s.png",
+  "source": "publiciptv.com/iptv-org mirror → elektamedia (operator CDN)"
+ },
+ "TVEncontrodasAguas.br@SD": {
+  "logo": "https://tveradioencontrodasaguas.com.br/wp-content/uploads/2020/07/logo_portal_2.png",
+  "source": "official site"
+ },
+ "TVGloboBrasilia.br@SD": {
+  "logo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/TV_Globo_logo_%28April_2025%29.svg/960px-TV_Globo_logo_%28April_2025%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "source": "Wikimedia Commons (Wikidata P154)"
+ },
+ "TVRodina.bg@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/bulgaria/tv-rodina-bg.png",
+  "source": "tv-logo/tv-logos"
+ },
+ "UNews.lb@SD": {
+  "logo": "https://media.unews.com.lb/2a587085-ca06-4f3d-b2e3-8bbd581b885c.png",
+  "source": "official site"
+ },
+ "ZainabiaChannel.in@SD": {
+  "logo": "https://www.zainabiachannel.co.in/assets/images/logo1.png",
+  "source": "official site"
+ },
+ "ZarinTV.us@SD": {
+  "logo": "https://zarintv.com/wp-content/uploads/2024/01/Zarin-TV-Logo.png",
+  "source": "official site"
+ },
+ "ZhejiangSatelliteTV.cn@SD": {
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/hong-kong/zhejiang-television-hk.png",
+  "source": "tv-logo/tv-logos",
+  "replaces": [
+   "https://i.imgur.com/NFFQNhq.png"
+  ]
+ }
+}

@@ -20,6 +20,17 @@
   har ændret (navn, kategori, URL ...), kanaler du selv har tilføjet, og kanaler du har slettet, bliver respekteret.
 - Kanaler, som iptv-org har fjernet, beholdes, så længe streamen virker. De gennemgår samme link-tjek som alle andre.
 
+## Logoer (`logo-overrides.json`)
+- Kanaler uden logo hos iptv-org får et logo fra `.iptv-sync/logo-overrides.json`. Nøglen er det fulde tvg-id med feed
+  (fx `Diema.bg@SD`): `{"logo": URL, "source": "...", "replaces": [døde URLer]}`.
+- Logoet bruges **kun**, når kanalens `tvg-logo` er tom eller er en af URLerne i `replaces` (kendt død: 404/410 eller fjernet hos imgur).
+  Det gælder upstream, din liste, base og hidden, så det overlever natkørslen og ikke ses som din egen rettelse.
+  Når iptv-org selv får et logo, bruges det automatisk. Et logo, du selv har sat, røres aldrig.
+- Kilder i prioriteret rækkefølge: iptv-org-databasen (logos.json), tv-logo/tv-logos, Wikimedia/Wikipedia (SVG som PNG-thumbnail)
+  og kanalens officielle side. Alle URLer er tjekket (HTTP 200, billed-content-type, kan åbnes som billede) 28-10-2026.
+- Efter en ændring i json-filen: `python3 .iptv-sync/sync.py --logos-only` retter kun logoerne i listerne og state-filerne
+  (intet netværk, intet andet ændres). Ellers sker det ved næste natkørsel.
+
 ## Tjek af døde links (alle kanaler i alle tre lister)
 - Hver URL tjekkes kun én gang pr. nat, også selvom den står i flere lister. Tjekket er en GET, der læser de første 512 bytes.
   Det bruger kanalens egen `http-user-agent`/`http-referrer` (EXTINF-attributter eller `#EXTVLCOPT`) og ellers en

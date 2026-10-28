@@ -51,6 +51,14 @@ Link check (--check-links, used by the workflow):
     They are NOT treated as deletions by him. A left-out channel that is also
     gone upstream is forgotten after 14 failed nights in a row (PURGE_AFTER).
 
+Logos (.iptv-sync/logo-overrides.json, keyed by full tvg-id incl. feed, e.g. "Diema.bg@SD"):
+  * {"<tvg-id>": {"logo": URL, "source": "...", "replaces": [dead URLs]}}
+  * applied to upstream, his list, base and hidden channels alike, but ONLY when the
+    channel's tvg-logo is empty or one of "replaces" (known dead). A logo upstream
+    provides later wins automatically; a logo he set by hand is never touched.
+  * --logos-only rewrites the playlists and state files in place with just the
+    overrides (nothing else changes, no network) - use after editing the json.
+
 Usage:
   python3 sync.py --in-place --check-links   # GitHub Actions (repo checkout)
   python3 sync.py                            # fetch repo + upstream, write ./out
@@ -88,6 +96,42 @@ CAT_MAP = {"Undefined": "General"}
 EXTINF = re.compile(r'^#EXTINF:(-?\d+)((?:\s+[\w-]+="[^"]*")*)\s*,(.*)$')
 GROUP = re.compile(r'\s+group-title="[^"]*"')
 FIELDS = ("attrs", "name", "extra", "url", "groups")
+LOGO_OVERRIDES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logo-overrides.json")
+LOGO = re.compile(r'(\stvg-logo=")([^"]*)(")')
+TVGID = re.compile(r'\stvg-id="([^"]*)"')
+
+
+def load_logo_overrides(path=LOGO_OVERRIDES):
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return {k: v for k, v in json.load(f).items() if not k.startswith("_") and v.get("logo")}
+
+
+def fix_logo(s, ov):
+    """Fill tvg-logo in an attrs string or #EXTINF line from the overrides, only
+    when it is empty or a known-dead URL listed in "replaces"."""
+    if not ov:
+        return s
+    m = TVGID.search(s)
+    o = ov.get(m.group(1)) if m else None
+    if not o:
+        return s
+    lm = LOGO.search(s)
+    if not lm or not (lm.group(2) == "" or lm.group(2) in o.get("replaces", ())):
+        return s
+    return s[:lm.start(2)] + o["logo"] + s[lm.end(2):]
+
+
+def fix_logos(units, ov):
+    for u in units:
+        u["attrs"] = fix_logo(u["attrs"], ov)
+    return units
+
+
+def fix_logo_text(text, ov):
+    """Text-level variant for --logos-only: touches only #EXTINF lines, keeps line endings."""
+    return "".join(fix_logo(l, ov) if l.startswith("#EXTINF") else l for l in text.splitlines(True))
 
 
 def fetch(url):
@@ -463,8 +507,24 @@ def main():
     ap.add_argument("--drop-removed", action="store_true", help="delete channels removed upstream")
     ap.add_argument("--pure", action="store_true", help="plain regeneration from upstream")
     ap.add_argument("--only", choices=list(TARGETS), action="append")
+    ap.add_argument("--logos-only", action="store_true",
+                    help="apply logo-overrides.json to the repo lists + state in place, nothing else")
     a = ap.parse_args()
     t_start = time.time()
+    ov = load_logo_overrides()
+
+    if a.logos_only:
+        repo = a.repo_dir or "."
+        st_dir = a.state or os.path.join(repo, ".iptv-sync", "state")
+        for n in a.only or list(TARGETS):
+            for p in (os.path.join(repo, n), os.path.join(st_dir, n + ".base"), os.path.join(st_dir, n + ".hidden")):
+                if os.path.exists(p):
+                    old = read(p)
+                    new = fix_logo_text(old, ov)
+                    if new != old:
+                        write(p, new)
+                        print("logos:", p)
+        return
 
     report_path = os.path.join(a.out, "report.json")
     seed_dir = None
@@ -499,6 +559,8 @@ def main():
             uptext, uinfo = union_category(uptext, up(src2), cat)
         up_header, U = units_from_upstream(uptext, cats)
         cur_header, C = units_from_target(cur, cats, main_g)
+        fix_logos(U, ov)
+        fix_logos(C, ov)
         L = dict(cfg=cfg, nl=nl, header=cur_header, up_header=up_header, uinfo=uinfo)
         if a.pure:
             L["recs"] = [dict(pub=u, base=u, upstream=True, deleted=False) for u in U]
@@ -506,10 +568,10 @@ def main():
             lists[n] = L
             continue
         bp, hdp = os.path.join(a.state, n + ".base"), os.path.join(a.state, n + ".hidden")
-        B = units_from_target(read(bp), cats, main_g)[1] if os.path.exists(bp) else list(C)
-        H = units_from_target(read(hdp), cats, main_g)[1] if os.path.exists(hdp) else []
+        B = fix_logos(units_from_target(read(bp), cats, main_g)[1], ov) if os.path.exists(bp) else list(C)
+        H = fix_logos(units_from_target(read(hdp), cats, main_g)[1], ov) if os.path.exists(hdp) else []
         if seed_dir and os.path.exists(os.path.join(seed_dir, n)):
-            S = units_from_target(read(os.path.join(seed_dir, n)), cats, main_g)[1]
+            S = fix_logos(units_from_target(read(os.path.join(seed_dir, n)), cats, main_g)[1], ov)
             H += S
             B += S  # seeded channels count as known (not his own, not deleted)
             for s in S:
