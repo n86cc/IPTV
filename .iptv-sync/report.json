@@ -30,7 +30,7 @@
    "manual": [],
    "removed_upstream": [
     "Acasa HD [Acasa.ro@HD] http://eb4b8dcf.kablakaka.ru/iptv/AE8BY6FHF5ZGAG/6988/index.m3u8 ALIVE",
-    "AXN Asia Malaysia (1080p) [AXNAsia.sg@Malaysia] https://2x2.me/5aE8sA ALIVE",
+    "AXN Asia Malaysia (1080p) [AXNAsia.sg@Malaysia] https://2x2.me/5aE8sA DEAD",
     "BBC News Latin America (720p) [BBCNews.uk@LatinAmerica] http://138.121.15.230:9002/BBC-NEWS/index.m3u8 ALIVE",
     "Canal E (720p) [CanalE.ar@SD] https://unlimited1-us.dps.live/perfiltv/perfiltv.smil/playlist.m3u8 ALIVE",
     "Chaco TV (720p) [Not 24/7] [ChacoTV.ar@SD] https://wowzasrv.chaco.gov.ar/Streamtv/chacotv/playlist.m3u8 ALIVE",
@@ -102,9 +102,11 @@
   "stats": {
    "added": 0,
    "current": 11417,
-   "final": 11417,
+   "dropped": 1,
+   "final": 11416,
    "kept_manual": 0,
-   "kept_removed": 64,
+   "kept_removed": 63,
+   "removed_dead": 1,
    "removed_upstream": 64,
    "skipped_user_deleted": 0,
    "unchanged": 11353,
@@ -133,6 +135,12 @@
    "unchanged": 460,
    "updated": 0,
    "upstream": 460
+  },
+  "union": {
+   "index_Sports": 460,
+   "main_list": 460,
+   "only_in_index": 0,
+   "union": 460
   }
  }
 }
