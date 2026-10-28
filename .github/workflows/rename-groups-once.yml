@@ -1,0 +1,70 @@
+name: Engangs-omdøbning af IPTV-grupper
+
+# Engangs-workflow (28-10-2026): omdøber hovedgruppen "All" i de committede lister og i
+# .iptv-sync/state til de nye navne fra sync.py. Kun group-title="All" ændres, alt andet
+# (rækkefølge, URLer, tvg-id, logoer, user-agents, header, linjeskift) bevares byte for byte.
+# Filen slettes igen, når kørslen er færdig.
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/rename-groups-once.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: iptv-sync
+  cancel-in-progress: false
+
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Omdøb "All"
+        run: |
+          python3 - <<'PY'
+          import os
+          NEW = {"iptv-org-dansk-all.m3u": "Danske kanaler", "iptv-org-index-all.m3u": "Alle IPTV-kanaler"}
+          for lst, name in NEW.items():
+              for p in (lst, f".iptv-sync/state/{lst}.base", f".iptv-sync/state/{lst}.hidden"):
+                  if not os.path.exists(p):
+                      continue
+                  with open(p, "rb") as f:
+                      old = f.read()
+                  new = old.replace(b'group-title="All"', f'group-title="{name}"'.encode())
+                  assert new.count(b"\n") == old.count(b"\n") and new.count(b"\r") == old.count(b"\r")
+                  assert b'group-title="All"' not in new
+                  with open(p, "wb") as f:
+                      f.write(new)
+                  print(p, old.count(b'group-title="All"'), "->", name)
+          PY
+      - name: Tjek at sync.py læser og skriver filerne uændret
+        run: |
+          python3 - <<'PY'
+          import importlib.util, sys
+          sys.argv = ["x"]
+          spec = importlib.util.spec_from_file_location("s", ".iptv-sync/sync.py")
+          s = importlib.util.module_from_spec(spec); spec.loader.exec_module(s)
+          import os
+          for n, cfg in s.TARGETS.items():
+              main, gf = cfg.get("main", "All"), cfg.get("group_first", False)
+              for p in (n, f".iptv-sync/state/{n}.base", f".iptv-sync/state/{n}.hidden"):
+                  if not os.path.exists(p):
+                      continue
+                  t = open(p, encoding="utf-8", newline="").read()
+                  nl = "\r\n" if "\r\n" in t else "\n"
+                  h, u = s.units_from_target(t, cfg["cats"], main)
+                  assert s.render(h, u, cfg["cats"], nl, main, gf) == t, p
+                  print("ok", p, len(u))
+          PY
+      - name: Commit og push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.m3u' .iptv-sync/state
+          git diff --cached --stat
+          git diff --cached --quiet && { echo "Intet at omdøbe."; exit 0; }
+          git commit -m "IPTV: gruppen \"All\" omdøbt til \"Danske kanaler\" / \"Alle IPTV-kanaler\" i lister og state (kun group-title ændret)"
+          git push

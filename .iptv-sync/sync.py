@@ -5,11 +5,12 @@ sync.py - keep n86cc/IPTV playlists in step with iptv-org, keeping Bro's format,
 
 Playlists (target file <- iptv-org source):
   iptv-org-dansk-all.m3u  <- countries/dk.m3u
-        every entry gets group-title="All", header #EXTM3U (CRLF kept)
+        every entry gets group-title="Danske kanaler", header #EXTM3U (CRLF kept)
   iptv-org-index-all.m3u  <- index.m3u
-        every channel written once as group-title="All" and then once per
+        every channel written once as group-title="Alle IPTV-kanaler" and then once per
         category (upstream "A;B;C" split on ';', "Undefined" -> "General");
         his header line (#EXTM3U x-tvg-url=...) is kept
+  (main group names are TARGETS[...]["main"]; the old name "All" is still read)
   sport.m3u               <- categories/sports.m3u  UNION  index.m3u entries
         with "Sports" among their ';' categories whose URL is missing from
         sports.m3u (dedup by URL, sports.m3u order); group-title removed and
@@ -68,11 +69,14 @@ from concurrent.futures import ThreadPoolExecutor
 UP = "https://iptv-org.github.io/iptv/"
 RAW = "https://raw.githubusercontent.com/n86cc/IPTV/main/"
 TARGETS = {
-    "iptv-org-dansk-all.m3u": {"src": "countries/dk.m3u", "cats": False},
-    "iptv-org-index-all.m3u": {"src": "index.m3u", "cats": True},
+    "iptv-org-dansk-all.m3u": {"src": "countries/dk.m3u", "cats": False, "main": "Danske kanaler"},
+    "iptv-org-index-all.m3u": {"src": "index.m3u", "cats": True, "main": "Alle IPTV-kanaler"},
     "sport.m3u": {"src": "categories/sports.m3u", "union_from": ("index.m3u", "Sports"),
                   "cats": False, "main": "Sport", "group_first": True},
 }
+# Former main-group names. Files/state written before the rename still use them;
+# they are read as the main group and written back with the list's current name.
+LEGACY_MAIN = ("All",)
 HIDE_AFTER = 2      # consecutive failed nights before a channel is left out
 PURGE_AFTER = 14    # failed nights before a left-out, gone-upstream channel is forgotten
 WORKERS, PER_HOST, TIMEOUT = 128, 12, 10
@@ -151,18 +155,20 @@ def units_from_upstream(text, cats):
 
 
 def units_from_target(text, cats, main="All"):
-    """His format: main-group block (All/Sport) followed by its category blocks (same channel)."""
+    """His format: main-group block (Danske kanaler / Alle IPTV-kanaler / Sport) followed by
+    its category blocks (same channel). LEGACY_MAIN names count as the main group too."""
     header, blocks = parse_blocks(text)
+    mains = {main, *LEGACY_MAIN}
     out, cur = [], None
     for b in blocks:
         s = split_block(b)
         same = cur is not None and all(cur[k] == s[k] for k in ("dur", "attrs", "name", "extra", "url"))
-        if cats and same and s["group"] != main:
+        if cats and same and s["group"] not in mains:
             cur["groups"] += (s["group"],)
             continue
         g = s.pop("group")
-        s["groups"] = () if g == main else (g,)
-        if g != main:
+        s["groups"] = () if g in mains else (g,)
+        if g not in mains:
             s["_noall"] = True  # entry without the main group block (manual edit)
         out.append(s)
         cur = s

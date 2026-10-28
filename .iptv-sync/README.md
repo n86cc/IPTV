@@ -4,12 +4,15 @@
 (03:00 dansk vintertid, 04:00 sommertid). Du kan også starte det manuelt under Actions.
 
 ## Kilder og format
-- `iptv-org-dansk-all.m3u` kommer fra iptv-org `countries/dk.m3u`. Alle kanaler ligger i gruppen "All", og filen har CRLF-linjeskift.
-- `iptv-org-index-all.m3u` kommer fra iptv-org `index.m3u`. Hver kanal står i "All" og i hver af sine kategorier
+- `iptv-org-dansk-all.m3u` kommer fra iptv-org `countries/dk.m3u`. Alle kanaler ligger i gruppen "Danske kanaler", og filen har CRLF-linjeskift.
+- `iptv-org-index-all.m3u` kommer fra iptv-org `index.m3u`. Hver kanal står i "Alle IPTV-kanaler" og i hver af sine kategorier
   (`;` splittes, "Undefined" bliver til "General"). Headeren med x-tvg-url bevares.
 - `sport.m3u` er foreningsmængden af `categories/sports.m3u` og alle kanaler i `index.m3u`, der har "Sports"
   blandt kategorierne. Dubletter fjernes efter URL. Rækkefølgen følger sports.m3u, og de ekstra kanaler kommer bagefter.
   group-title fjernes, og `group-title="Sport"` sættes lige efter `#EXTINF:-1`. Filen har LF-linjeskift.
+- Gruppenavnene står i `TARGETS` i `sync.py` (`"main"`). Indtil 28-10-2026 hed hovedgruppen "All" i både den danske
+  og den store liste, så de to grupper ikke kunne skelnes i Kodi. Det gamle navn "All" læses stadig som hovedgruppen
+  (`LEGACY_MAIN`), men skrives altid med det nye navn.
 
 ## Opdatering
 - URLer, navne, logoer og user-agents følger upstream, og nye kanaler tilføjes.
