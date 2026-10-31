@@ -78,7 +78,7 @@ UP = "https://iptv-org.github.io/iptv/"
 RAW = "https://raw.githubusercontent.com/n86cc/IPTV/main/"
 TARGETS = {
     "iptv-org-dansk-all.m3u": {"src": "countries/dk.m3u", "cats": False, "main": "Danske kanaler"},
-    "iptv-org-index-all.m3u": {"src": "index.m3u", "cats": True, "main": "Alle IPTV-kanaler"},
+    "iptv-org-index-all.m3u": {"src": "index.m3u", "cats": True, "main": "Alle IPTV-kanaler", "single": True},
     "sport.m3u": {"src": "categories/sports.m3u", "union_from": ("index.m3u", "Sports"),
                   "cats": False, "main": "Sport", "group_first": True},
 }
@@ -219,10 +219,12 @@ def units_from_target(text, cats, main="All"):
     return header, out
 
 
-def render(header, units, cats, nl="\n", main="All", group_first=False):
+def render(header, units, cats, nl="\n", main="All", group_first=False, single=False):
     out = [header]
     for u in units:
         groups = ([main] if not u.get("_noall") else []) + list(u["groups"])
+        if single:  # published list: each channel once, in its first category
+            groups = [u["groups"][0] if u["groups"] else main]
         for g in groups:
             if group_first:
                 out.append(f'#EXTINF:{u["dur"]} group-title="{g}"{u["attrs"]},{u["name"]}')
@@ -629,7 +631,7 @@ def main():
                 urls = {p["url"] for p in pub + hidden}
                 st["urls_dead_tonight"] = sum(1 for u in urls if status.get(u, "").startswith("dead"))
         header = L["up_header"] if a.pure else L["header"]
-        write(os.path.join(a.out, n), render(header, pub, cats, L["nl"], main_g, gf))
+        write(os.path.join(a.out, n), render(header, pub, cats, L["nl"], main_g, gf, cfg.get("single", False)))
         if a.in_place:
             write(os.path.join(a.state, n + ".base"), render(L["header"], base, cats, L["nl"], main_g, gf))
             hdp = os.path.join(a.state, n + ".hidden")
