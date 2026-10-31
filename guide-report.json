@@ -1,0 +1,35 @@
+{
+ "built_utc": "2026-10-31 05:56",
+ "seconds": 129,
+ "size_bytes": 11679924,
+ "programmes": 167370,
+ "sources": {
+  "pluto": true,
+  "samsung": true,
+  "dk1": true,
+  "all": true
+ },
+ "matched_by_source": {
+  "pluto": 1156,
+  "samsung": 10,
+  "dk1": 5,
+  "all": 1443
+ },
+ "lists": {
+  "iptv-org-dansk-all.m3u": {
+   "tvg_ids": 148,
+   "with_guide": 143,
+   "with_programmes_today": 143
+  },
+  "sport.m3u": {
+   "tvg_ids": 382,
+   "with_guide": 105,
+   "with_programmes_today": 105
+  },
+  "iptv-org-index-all.m3u": {
+   "tvg_ids": 9568,
+   "with_guide": 2493,
+   "with_programmes_today": 2492
+  }
+ }
+}
