@@ -25,6 +25,8 @@ https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8
 https://dev.aftermind.xyz/edge-hls/unitrust/alfasports/index.m3u8?token=8TXWzhY3h6jrzqEqx
 #EXTINF:-1 group-title="Sport" tvg-id="AmericanNinjaWarrior.us@SD" tvg-logo="https://raw.githubusercontent.com/RoqueDJ/iptv-svg/main/1792421696158.png",American Ninja Warrior (1080p)
 https://d4whmvwm0rdvi.cloudfront.net/10007/99951318/hls/master.m3u8?ads.xumo_channelId=99951318&ads.asnw=169843&ads.afid=405342864&ads.sfid=19647852&ads.csid=xumo_web_NBCUAmericanNinjaWarrior_ssai_cro&ads._fw_is_lat=0&ads._fw_us_privacy=&ads._fw_coppa=0&ads._fw_did=a5090924-15b1-4b7f-b6cd-2f06e2ba51e1&ads._fw_vcid2=512116:a5090924-15b1-4b7f-b6cd-2f06e2ba51e1&ads._fw_app_bundle=web.xumo.com&ads._fw_app_store_url=&ads._fw_content_category=&ads._fw_content_genre=&ads._fw_content_language=en&ads._fw_content_rating=&ads._fw_deviceMake=GitHubAction&ads._fw_device_model=PythonScript&ads._fw_deviceType=3-Connected_TV&ads.appVersion=1.0.0&ads.appName=XumoPlay&ads.xumo_contentId=4063&ads.xumo_contentName=NBCUAmericanNinjaWarrior&ads.xumo_providerId=4063&ads.xumo_providerName=NBCUAmericanNinjaWarrior&ads.channelId=99951318
+#EXTINF:-1 group-title="Sport" tvg-id="AntenaPlayEvents.ro@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/87/Antena_Play_symbol_white_2022.svg/revision/latest/scale-to-width-down/1000?cb=20251128201145",AntenaPlay Events (576p) [Not 24/7]
+https://live4dai.antenaplay.ro/live2_sdi09/live2_sdi09_600k.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Arena4.hu@SD" tvg-logo="https://i.imgur.com/uAaQDr6.png",Arena4
 http://88.212.7.14/live/arena4/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="ArenaSport1.sk@SD" tvg-logo="https://i.imgur.com/2qf67zW.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3",Arena Sport 1
@@ -71,6 +73,8 @@ https://cdn3.wowza.com/5/ZWQ1K2NYTmpFbGsr/BEK-WOWZA-1/smil:BEKPRIMEW.smil/playli
 https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus5.smil/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Belarus5.by@HD" tvg-logo="https://i.imgur.com/NJsRFud.png",Belarus-5 HD (1080p)
 http://178.124.179.122:8080/BT5/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="Belarus5.by@Internet" tvg-logo="https://i.imgur.com/NJsRFud.png",Belarus-5 Internet (1080p) [Not 24/7]
+https://edge59.dc.beltelecom.by/ngtrk/smil:belarus5int.smil/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="BellatorMMA.us@SD" tvg-logo="https://i.imgur.com/VBKoLHk.png",Bellator MMA
 https://jmp2.uk/plu-5ebc8688f3697d00072f7cf8.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="BilliardTV.us@SD" tvg-logo="https://i.imgur.com/BZijfKh.png",Billiard TV (1080p) [Geo-blocked]
@@ -218,7 +222,7 @@ https://bantel-cdn1.iptvperu.tv:1936/btnscrtn/espn-mux/chunks.m3u8
 http://190.61.47.54:8000/play/a004/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="ESPNLatinAmerica.us@Mexico" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",ESPN Latin America Mexico (1080p)
 http://168.228.44.241:9997/play/a06p/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="ESPNPremium.ar@HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/ESPN_Premium_logo.svg/960px-ESPN_Premium_logo.svg.png",ESPN Premium (Argentina) HD (1080p)
+#EXTINF:-1 group-title="Sport" tvg-id="ESPNPremium.ar@HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/ESPN_Premium_logo.svg/960px-ESPN_Premium_logo.svg.png",ESPN Premium HD (1080p)
 http://158.172.155.130:8000/play/a0ao/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="ESPNPremium.cl@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/ESPN_Premium_logo.svg/960px-ESPN_Premium_logo.svg.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36 VLC/3.0.18 LibVLC/3.0.18",ESPN Premium (Chile)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36 VLC/3.0.18 LibVLC/3.0.18
@@ -727,6 +731,14 @@ https://stmv7.voxtvhd.com.br/xxvideo/xxvideo/playlist.m3u8
 https://tjktv-live.tjk.org/tjktv2/tjktv2.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="TJKTV.tr@SD" tvg-logo="https://i.imgur.com/3zHdkYG.png",TJK TV (1080p)
 https://tjktv-live.tjk.org/tjktv.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="TNTSports1.uk@SD" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tnt-sports-1-uk.png?raw=true",TNT Sports 1
+http://37.49.224.5:80/stream/1/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="TNTSports2.uk@SD" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tnt-sports-2-uk.png?raw=true",TNT Sports 2
+http://37.49.224.5:80/stream/2/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="TNTSports3.uk@SD" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tnt-sports-3-uk.png?raw=true",TNT Sports 3
+http://37.49.224.5:80/stream/3/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="TNTSports4.uk@SD" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tnt-sports-4-uk.png?raw=true",TNT Sports 4
+http://37.49.224.5:80/stream/4/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="TourSpotTV.do@HD" tvg-logo="https://imgur.com/khj869k.png",Tour Spot TV (1280p) [Not 24/7]
 https://fox.hostlagarto.com:8081/toursporttv/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="TRSport.it@SD" tvg-logo="https://i.imgur.com/ELXmaqg.png",TR Sport (480p)
@@ -789,6 +801,8 @@ http://tvsen5.aynascope.net/willowhd/index.m3u8
 https://d36r8jifhgsk5j.cloudfront.net/Willow_TV.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="WinSports.co@SD" tvg-logo="https://i.imgur.com/DuSSrHV.png",Win Sports (1080p)
 http://138.121.15.230:9002/WIN-SPORT/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="WinPlusFutbol.co@SD" tvg-logo="https://i.imgur.com/0UN87vB.png",Win+ Futbol (1080p)
+http://181.78.12.119:16123/play/ch19/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="WorldofFreesports.de@SD" tvg-logo="https://i.imgur.com/lta5Mog.png",World of Freesports (1080p)
 https://mainstreammedia-worldoffreesportsintl-rakuten.amagi.tv/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="WorldPokerTour.us@US" tvg-logo="https://i.imgur.com/98kLMjj.png",World Poker Tour (1080p)

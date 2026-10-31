@@ -3,8 +3,6 @@
 https://mgv-awapa.akamaized.net/hls/live/2104282/MGV_CHANNEL15/master.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="AztecaDeportesNetwork.mx@SD" tvg-logo="https://match-images.icdb.tv/5913207f2494844101287828e87625eb.jpg",Azteca Deportes Network (1080p)
 http://209.14.115.253:8081/azteca-deportes/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="Belarus5.by@Internet" tvg-logo="https://i.imgur.com/NJsRFud.png",Belarus-5 Internet (1080p) [Not 24/7]
-https://edge59.dc.beltelecom.by/ngtrk/smil:belarus5int.smil/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="BoksTV.ru@SD" tvg-logo="https://i.imgur.com/R1UjyfX.png",Boks TV (720p)
 http://31.148.48.15/Boks_TV/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="CanaldoInter.br@SD" tvg-logo="https://i.imgur.com/TQFWEIS.png",Canal do Inter (720p) [Not 24/7]
@@ -178,5 +176,3 @@ http://dtv.vol.net.ua/UPL-TV/index.m3u8
 http://190.197.41.183/USA_NETWORK/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="VitalDrive.ru@HD" tvg-logo="https://i.imgur.com/XoR9zLh.png",Vital Drive
 https://autopilot.catcast.tv/content/37909/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="WinPlusFutbol.co@SD" tvg-logo="https://i.imgur.com/0UN87vB.png",Win+ Futbol (1080p)
-http://181.78.12.119:16123/play/ch19/index.m3u8
