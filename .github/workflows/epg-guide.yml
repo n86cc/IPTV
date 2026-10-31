@@ -20,13 +20,28 @@ concurrency:
 jobs:
   guide:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: iptv-org/epg grabber (manglende danske og sportskanaler, .iptv-sync/grab.channels.xml)
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          mkdir -p /tmp/out
+          git clone -q --depth 1 https://github.com/iptv-org/epg.git /tmp/iptv-epg
+          cd /tmp/iptv-epg
+          npm ci --no-audit --no-fund --loglevel=error
+          timeout 360 npm run grab --- --channels="$GITHUB_WORKSPACE/.iptv-sync/grab.channels.xml" --output=/tmp/out/grab.xml --days=2 --maxConnections=10 || true
+          ls -la /tmp/out
 
       - name: Byg guide.xml.gz
         run: |
@@ -38,6 +53,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd /tmp/out
+          rm -f grab.xml
           printf '# EPG\n\nAutogenereret af .github/workflows/epg-guide.yml på main. Brug i Kodi IPTV Simple (epgUrl):\n\nhttps://raw.githubusercontent.com/%s/epg/guide.xml.gz\n\nTal: guide-report.json\n' "$GITHUB_REPOSITORY" > README.md
           git init -q -b epg
           git config user.name "github-actions[bot]"

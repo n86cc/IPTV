@@ -12,7 +12,12 @@ Matching (first hit wins, per tvg-id):
   2. Samsung TV+: stream URL jmp2.uk/stvp-<id>  -> i.mjh.nz/SamsungTVPlus/all.xml.gz channel <id>
   3. tvg-id without "@feed", compared on letters/digits only (DR1.dk@SD ~ DR1.dk,
      TV2Bornholm.dk ~ TV.2.Bornholm.dk; epgshare "us2"-style suffixes count as "us")
-     against epgshare01 DK1 first, then epgshare01 ALL_SOURCES1.
+     against ID_SOURCES in order (epgshare01 DK1, iptv-org grabber output, UK1, DE1,
+     US2, US_SPORTS1, ALL_SOURCES1). Roku (jmp2.uk/rok-) is also matched on stream URL.
+  4. Fallback: normalised display-name (unique per source, country must agree)
+     against NAME_SOURCES in order (adds i.mjh.nz Plex/Roku/Pluto/Samsung).
+  A source channel only counts if it has programmes in the window; each playlist
+  channel gets programmes from exactly one source (first hit).
 Runs every 4 hours (.github/workflows/epg-guide.yml) because the Pluto/Samsung
 guides only cover roughly the next 12-18 hours. The result is force-pushed as the
 single commit of branch 'epg' (no history), so the repo does not grow.
@@ -26,14 +31,23 @@ import xml.etree.ElementTree as ET
 from xml.sax.saxutils import escape, quoteattr
 
 LISTS = ["iptv-org-dansk-all.m3u", "sport.m3u", "iptv-org-index-all.m3u"]
-SOURCES = [  # (key, url)
+EPG = "https://epgshare01.online/epgshare01/epg_ripper_"
+SOURCES = [  # (key, url) - also the priority order
     ("pluto", "https://i.mjh.nz/PlutoTV/all.xml.gz"),
     ("samsung", "https://i.mjh.nz/SamsungTVPlus/all.xml.gz"),
-    ("dk1", "https://epgshare01.online/epgshare01/epg_ripper_DK1.xml.gz"),
-    ("all", "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz"),
+    ("roku", "https://i.mjh.nz/Roku/all.xml.gz"),
+    ("dk1", EPG + "DK1.xml.gz"),
+    ("grab", "file:///tmp/out/grab.xml"),   # iptv-org/epg grabber output (workflow), optional
+    ("uk1", EPG + "UK1.xml.gz"),
+    ("de1", EPG + "DE1.xml.gz"),
+    ("us2", EPG + "US2.xml.gz"),
+    ("ussports", EPG + "US_SPORTS1.xml.gz"),
+    ("all", EPG + "ALL_SOURCES1.xml.gz"),
+    ("plex", "https://i.mjh.nz/Plex/all.xml.gz"),
 ]
-ID_SOURCES = ["dk1", "all"]          # matched on normalised tvg-id, in this order
-URL_SOURCES = {"plu": "pluto", "stvp": "samsung"}
+ID_SOURCES = ["dk1", "grab", "uk1", "de1", "us2", "ussports", "all"]   # normalised tvg-id, in order
+NAME_SOURCES = ["dk1", "grab", "uk1", "de1", "us2", "ussports", "all", "plex", "roku", "pluto", "samsung"]
+URL_SOURCES = {"plu": "pluto", "stvp": "samsung", "rok": "roku"}
 PAST = dt.timedelta(hours=12)
 FUTURE = dt.timedelta(days=7)
 MIN_PROGRAMMES = 20000
@@ -46,6 +60,17 @@ def norm_id(i):
     if m:
         i = m.group(1) + "." + m.group(2)
     return re.sub(r"[^a-z0-9]", "", i)
+
+
+def norm_name(n):
+    n = re.sub(r"\(.*?\)|\[.*?\]", " ", n.lower())
+    n = re.sub(r"\b(hd|fhd|uhd|4k|sd|tv|channel)\b", " ", n)
+    return re.sub(r"[^a-z0-9]", "", n)
+
+
+def id_country(i):
+    m = re.match(r"^.*\.([a-z]{2})\d*$", i.split("@")[0].lower())
+    return m.group(1) if m else None
 
 
 def read_lists(repo):
@@ -66,7 +91,7 @@ def read_lists(repo):
                     url = nxt.strip(); break
             c = chans.setdefault(tid, {"name": name, "urlkeys": set(), "lists": set()})
             c["lists"].add(lst)
-            u = re.search(r"jmp2\.uk/(plu|stvp)-([A-Za-z0-9_-]+)", url)
+            u = re.search(r"jmp2\.uk/(plu|stvp|rok)-([A-Za-z0-9_-]+)", url)
             if u:
                 c["urlkeys"].add((URL_SOURCES[u.group(1)], u.group(2)))
     return chans
@@ -111,15 +136,19 @@ def parse_time(s):
     return t.replace(tzinfo=dt.timezone.utc)
 
 
-def channel_ids(path):
-    ids = set()
+def channel_ids(path, lo, hi):
+    """id -> [display-names], only channels with programmes inside the window."""
+    ids, cnt = {}, collections.Counter()
     for _, el in ET.iterparse(opener(path)):
         if el.tag == "channel":
-            ids.add(el.get("id", ""))
+            ids[el.get("id", "")] = [d.text or "" for d in el.findall("display-name")]
             el.clear()
         elif el.tag == "programme":
+            s, e = parse_time(el.get("start")), parse_time(el.get("stop"))
+            if s and (e or s) > lo and s < hi:
+                cnt[el.get("channel", "")] += 1
             el.clear()
-    return ids
+    return {i: n for i, n in ids.items() if cnt[i]} | {i: [] for i in cnt if i not in ids}
 
 
 def main():
@@ -138,20 +167,28 @@ def main():
     print(f"{len(chans)} unique tvg-ids in the lists", flush=True)
 
     print("Downloading sources:", flush=True)
-    paths = {k: fetch(k, u, a.cache) for k, u in SOURCES}
+    paths = {}
+    for k, u in SOURCES:
+        if u.startswith("file://"):
+            f = u[7:]
+            paths[k] = f if os.path.exists(f) and os.path.getsize(f) > 100 else None
+            print(f"  {k}: {'local ' + f if paths[k] else 'not present, skipped'}", flush=True)
+        else:
+            paths[k] = fetch(k, u, a.cache)
+    cids = {k: channel_ids(p, lo, hi) for k, p in paths.items() if p}
 
     # source channel (key, id) -> list of tvg-ids
     want = collections.defaultdict(list)
     matched = {}
     for tid, c in chans.items():
         for key, sid in sorted(c["urlkeys"]):
-            if paths.get(key):
+            if paths.get(key) and sid in cids[key]:
                 want[(key, sid)].append(tid); matched[tid] = key; break
     for key in ID_SOURCES:
         if not paths.get(key):
             continue
         byn = {}
-        for sid in channel_ids(paths[key]):
+        for sid in cids[key]:
             byn.setdefault(norm_id(sid), sid)
         for tid in chans:
             if tid in matched:
@@ -159,6 +196,36 @@ def main():
             sid = byn.get(norm_id(tid))
             if sid:
                 want[(key, sid)].append(tid); matched[tid] = key
+
+    # fallback: normalised display-name (unique names only; country must agree if both known)
+    byname = {}
+    for tid, c in chans.items():
+        if tid in matched:
+            continue
+        key_ = norm_name(c["name"])
+        if len(key_) >= 3:
+            byname.setdefault(key_, []).append(tid)
+    for key in NAME_SOURCES:
+        if not paths.get(key):
+            continue
+        idx = collections.defaultdict(set)
+        for sid, names in cids[key].items():
+            for n in names:
+                nn = norm_name(n)
+                if nn:
+                    idx[nn].add(sid)
+        for nn, tids in byname.items():
+            sids = idx.get(nn)
+            if not sids or len(sids) != 1:
+                continue
+            sid = next(iter(sids))
+            for tid in tids:
+                if tid in matched:
+                    continue
+                cs, ct = id_country(sid), id_country(tid)
+                if cs and ct and cs != ct and not (cs == "uk" and ct == "gb"):
+                    continue
+                want[(key, sid)].append(tid); matched[tid] = key + ":name"
 
     # stream programmes, rewrite channel id, keep window
     tmp = a.out + ".tmp"
