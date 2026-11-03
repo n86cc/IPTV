@@ -232,11 +232,11 @@ http://181.78.197.59:8000/play/a07n/index.m3u8
 https://lb.iptvnetwork.net/ls28/10044/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="ESPN4LatinAmerica.us@South" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/ESPN_4_logo.svg/960px-ESPN_4_logo.svg.png",ESPN 4 Latin America (1080p)
 https://barinaslive1.boldmss.com/ESPN_4/ESPN_4.isml/ESPN_4.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="ESPN5LatinAmerica.us@South" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",ESPN 5 Latin America (1080p)
+#EXTINF:-1 group-title="Sport" tvg-id="ESPN5LatinAmerica.us@South" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/ESPN_5_logo.svg/960px-ESPN_5_logo.svg.png",ESPN 5 Latin America (1080p)
 https://barinaslive1.boldmss.com/ESPN_5/ESPN_5.isml/ESPN_5.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="ESPN6LatinAmerica.us@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",ESPN 6 Latin America (1080p)
+#EXTINF:-1 group-title="Sport" tvg-id="ESPN6LatinAmerica.us@SD" tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/ESPN_6_logo.svg/960px-ESPN_6_logo.svg.png",ESPN 6 Latin America (1080p)
 https://barinaslive1.boldmss.com/ESPN_6/ESPN_6.isml/ESPN_6.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="ESPN7LatinAmerica.us@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",ESPN 7 Latin America (1080p)
+#EXTINF:-1 group-title="Sport" tvg-id="ESPN7LatinAmerica.us@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/ESPN_7_logo.svg/960px-ESPN_7_logo.svg.png",ESPN 7 Latin America (1080p)
 https://barinaslive1.boldmss.com/ESPN_7/ESPN_7.isml/ESPN_7.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="ESPN8TheOcho.us@ESPN8TheOchoHD" tvg-logo="https://images.fubo.tv/channel-config-ui/station-logos/on-dark/espn_8_the_ocho_bw.png",ESPN8: The Ocho (1080p)
 https://d3b6q2ou5kp8ke.cloudfront.net/ESPNTheOcho.m3u8
@@ -276,22 +276,26 @@ https://directes-tv-cat.3catdirectes.cat/live-content/esport3-hls/master.m3u8
 https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="ESTV.us@SD" tvg-logo="https://i.imgur.com/qHNV0f5.png",ESTV (United States) (720p)
 https://a-cdn.klowdtv.com/live2/estv_720p/playlist.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="Eurosport1.fr@Czechia" tvg-logo="https://i.imgur.com/olQJgm7.png",Eurosport 1 Czechia
+http://88.212.7.14/live/test_esp1_hevc_tizen/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Eurosport1.fr@Germany" tvg-logo="https://i.imgur.com/olQJgm7.png",Eurosport 1 Germany
 http://90.183.52.46:4000/play/a06v/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Eurosport1.fr@Hungary" tvg-logo="https://i.imgur.com/olQJgm7.png",Eurosport 1 Hungary
 http://88.212.7.14/live/esp1_hun/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Eurosport1.fr@Russia" tvg-logo="https://i.imgur.com/olQJgm7.png",Eurosport 1 Russia (1080p)
-http://stream.mcquack.net/176/index.m3u8
+https://s7.iptv-24.net/1439/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Eurosport1.fr@Spain" tvg-logo="https://i.imgur.com/olQJgm7.png",Eurosport 1 Spain (576p)
 http://45.134.141.161:2200/ARG/Eurosport_1_HD/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Eurosport1.fr@Turkiye" tvg-logo="https://i.imgur.com/olQJgm7.png",Eurosport 1 Turkiye
 https://andro.mangeinde4.lat/checklist/androstreamlivees1.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Eurosport1Polska.pl@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e7/Eurosport_1_2022.svg/revision/latest?cb=20220806090310",Eurosport 1 Polska (1080p)
 http://57.128.210.196:8080/264/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="Eurosport2.fr@Czechia" tvg-logo="https://i.imgur.com/f56dHgR.png",Eurosport 2 Czechia
+http://88.212.7.14/live/test_esp2_hevc_tizen/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Eurosport2.fr@Hungary" tvg-logo="https://i.imgur.com/f56dHgR.png",Eurosport 2 Hungary
 http://88.212.7.14/live/esp2_hun/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Eurosport2.fr@Russia" tvg-logo="https://i.imgur.com/f56dHgR.png",Eurosport 2 Russia (1080p)
-http://stream.mcquack.net/192/index.m3u8
+https://s7.iptv-24.net/1452/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Eurosport2.fr@Spain" tvg-logo="https://i.imgur.com/f56dHgR.png",Eurosport 2 Spain (1080p)
 http://45.134.141.161:2200/ARG/Eurosport_2_HD/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Eurosport2.fr@Turkiye" tvg-logo="https://i.imgur.com/f56dHgR.png",Eurosport 2 Turkiye
@@ -791,6 +795,8 @@ http://88.212.15.50/live/test_rtvs_sport_hevc/playlist.m3u8
 https://stream8.cinerama.uz/1004/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="SportExtra.ro@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/fa/Sport_Extra_horizontal.svg/revision/latest/scale-to-width-down/1000?cb=20220425110755",Sport Extra
 https://tvextra-hls.b-cdn.net/sportextra/sportextra.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="SportTotalFM.ro@SD" tvg-logo="https://sptfm.ro/wp-content/uploads/2021/05/logo-sport-total-fm-01.png",Sport Total FM (576i)
+https://livesptfm.com/SPTFM/Live/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="SportTV1.pt@SD" tvg-logo="https://i.imgur.com/YWic36u.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",Sport TV1
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
 http://znty.dyndns.org:5010/hls/stv1.m3u8

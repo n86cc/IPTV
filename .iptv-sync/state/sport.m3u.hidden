@@ -75,8 +75,6 @@ http://183.207.248.71/gitv/live1/G_JSTY/G_JSTY
 http://31.148.48.15/KHL_TV/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="L1.pe@SD" tvg-logo="https://i.imgur.com/eRmXneK.png",L1 (1080p)
 http://45.4.1.201:8000/play/a1ai/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="LacrosseTV.us@SD" tvg-logo="https://yt3.googleusercontent.com/ytc/AIdro_m_xSJFydxZ9QBU-85OuchjmzS0Bo0_Tukmk7to8hBfyl8=s512-c-k-c0x00ffffff-no-rj",Lacrosse TV (720p)
-https://a-cdn.klowdtv.com/live2/lsn_720p/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Loversenykozvetites.hu@SD" tvg-logo="https://i.imgur.com/IGajR6G.png",Loverseny kozvetites (420p)
 http://87.229.103.60:1935/liverelay/loverseny2.sdp/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="MatchArena.ru@SD" tvg-logo="https://i.imgur.com/udTzwzu.png",Match! Arena (720p)
@@ -128,6 +126,22 @@ http://158.101.222.193:88/georgia_play.php?id=setanta_sports_plus_georgia
 http://158.101.222.193:88/georgia_play.php?id=setanta_sports_3
 #EXTINF:-1 group-title="Sport" tvg-id="SKITV.ch@SD" tvg-logo="https://i.imgur.com/S6qgwLG.png",SKI TV (1080p) [Not 24/7]
 https://d2xeo83q8fcni6.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/SkiTV-SportsTribal/193.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="SkySport1.nz@SD" tvg-logo="https://i.imgur.com/ThJHEuN.png",Sky Sport 1
+http://37.49.224.5/stream/44/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="SkySport2.nz@SD" tvg-logo="https://i.imgur.com/cu8yB69.png",Sky Sport 2
+http://37.49.224.5/stream/45/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="SkySport3.nz@SD" tvg-logo="https://i.imgur.com/XYp3Ua3.png",Sky Sport 3
+http://37.49.224.5/stream/46/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="SkySport4.nz@SD" tvg-logo="https://i.imgur.com/KUXs7SQ.png",Sky Sport 4
+http://37.49.224.5/stream/51/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="SkySport7.nz@SD" tvg-logo="https://i.imgur.com/iuTNWh4.png",Sky Sport 7
+http://37.49.224.5/stream/50/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="SkySport8.nz@SD" tvg-logo="https://i.imgur.com/8YjqlRv.png",Sky Sport 8
+http://37.49.224.5/stream/70/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="SkySport9.nz@SD" tvg-logo="https://i.imgur.com/9fLRHSg.png",Sky Sport 9
+http://37.49.224.5/stream/52/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="SkySportSelect.nz@SD" tvg-logo="https://i.imgur.com/6x2anTA.png",Sky Sport Select
+http://37.49.224.5/stream/53/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="SonySportsTen1.in@HD" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SONY_SPORTS_TEN_1/images/LOGO_HD/image.png",Sony Sports Ten 1 HD (1080p)
 http://103.185.24.134:3001/SonyTenSports1/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="SportTV1.pt@SD" tvg-logo="https://i.imgur.com/YWic36u.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",Sport TV1
@@ -156,8 +170,6 @@ https://tvsen5.aynaott.com/cXPB2LKkErN9/index.m3u8
 https://d25tgymtnqzu8s.cloudfront.net/smil:sukan/manifest.mpd
 #EXTINF:-1 group-title="Sport" tvg-id="TSports.bd@SD" tvg-logo="https://i.imgur.com/2JzlorD.png",T Sports (1080p)
 https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="TeletrakTV.cl@SD" tvg-logo="https://i.imgur.com/NoJvlig.png",Teletrak TV (720p)
-https://unlimited6-cl.dps.live/sportinghd/sportinghd.smil/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="TDMSports.mo@SD" tvg-logo="https://i.imgur.com/AsWLf8S.png",TDM Sports (720p)
 https://live3.tdm.com.mo/ch4/sport_ch4.live/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Teledeporte.es@SD" tvg-logo="https://i.ibb.co/0jxLdjnY/TDP.png",Teledeporte
