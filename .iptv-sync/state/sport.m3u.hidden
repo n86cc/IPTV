@@ -1,8 +1,12 @@
 #EXTM3U
+#EXTINF:-1 group-title="Sport" tvg-id="ACCNetwork.us@SD" tvg-logo="https://i.imgur.com/TpCkbkT.png",ACC Network (720p)
+http://23.239.31.26:8989/accnetwork/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="AlIraqiaSport.iq@SD" tvg-logo="https://i.imgur.com/DrrlxTO.png",Al Iraqia Sport (720p)
 https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="AwapaSportsTV.sv@SD" tvg-logo="https://i.imgur.com/MNw5cJH.jpg",Awapa Sports TV (1080p) [Not 24/7]
 https://mgv-awapa.akamaized.net/hls/live/2104282/MGV_CHANNEL15/master.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="AyMSports.mx@SD" tvg-logo="https://i.imgur.com/yu3Bpbd.png",AyM Sports (1080p)
+http://168.196.127.137:6001/play/a06v/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="AztecaDeportesNetwork.mx@SD" tvg-logo="https://match-images.icdb.tv/5913207f2494844101287828e87625eb.jpg",Azteca Deportes Network (1080p)
 http://209.14.115.253:8081/azteca-deportes/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="BoksTV.ru@SD" tvg-logo="https://i.imgur.com/R1UjyfX.png",Boks TV (720p)
@@ -81,6 +85,8 @@ http://31.148.48.15/Match_Arena_HD/index.m3u8
 http://31.148.48.15/Match_Igra_HD/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="MatchStrana.ru@SD" tvg-logo="https://i.imgur.com/X02s2UE.png",Match! Strana (720p)
 http://31.148.48.15/Match_Strana/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="MEGOGOSport.ua@SD" tvg-logo="https://i.imgur.com/5JmT4mW.png",MEGOGO Sport (1080p)
+http://5.188.159.128:8070/megogo_sport/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="MLBStrikeZone.us@SD" tvg-logo="https://i.imgur.com/uMI1ySO.png",MLB Strike Zone (720p)
 http://23.237.104.106:8080/USA_MLB_STRIKE_ZONE/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="MMATV.us@SD" tvg-logo="https://i.imgur.com/Qxco1eW.png",MMA TV (576p)
@@ -91,6 +97,8 @@ http://23.237.104.106:8080/USA_MSG/index.m3u8
 https://stream.digitalgt.com:3605/live/multivisionsportslive.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="NSports.br@SD" tvg-logo="https://i.imgur.com/7QnJojr.png",N Sports (1080p)
 https://ogc-nsprt-tcl-roku-syndication.otteravision.com/ogc/nsprt/nsprt.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="NFLNetwork.us@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/NFL_Network_logo.svg/960px-NFL_Network_logo.svg.png",NFL Network (720p)
+http://198.58.104.90:8989/nfl/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="OneGolf.pk@SD" tvg-logo="https://i.imgur.com/7JhaEW5.png",One Golf (720p)
 http://162.250.201.58:6211/pk/ONEGOLF/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="PolsatSportFight.pl@SD" tvg-logo="https://i.imgur.com/8x1FV3o.png",Polsat Sport Fight
