@@ -13,6 +13,8 @@ http://209.14.115.253:8081/azteca-deportes/index.m3u8
 http://31.148.48.15/Boks_TV/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="CanaldoInter.br@SD" tvg-logo="https://i.imgur.com/TQFWEIS.png",Canal do Inter (720p) [Not 24/7]
 https://video01.soultv.com.br/internacional/internacional/playlist.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="CanalShowsport.ar@SD" tvg-logo="https://i.imgur.com/0L9tW3Z.png",Canal Showsport (720p)
+https://livestream.lumpentv.com.ar/hls/lumpen.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="CanalPlusSport.fr@SD" tvg-logo="https://i.imgur.com/EOXnU15.png",Canal+ Sport (1080p) [Geo-blocked]
 http://tv.streambox.fr/live/testlivestream/testlivestream/31.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="CBCSport.az@HD" tvg-logo="https://i.imgur.com/3mEdjuq.png",CBC Sport [Geo-blocked]
@@ -22,6 +24,10 @@ http://143.14.134.107/167/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="DAZN1.uk@Portugal" tvg-logo="https://i.imgur.com/2Z2EmZF.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",DAZN 1 Portugal
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
 http://50.7.120.34:8080/DAZN1/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="DAZN4.uk@Portugal" tvg-logo="https://i.imgur.com/m7ga8bU.png",DAZN 4 (540p)
+http://23.237.104.106:8080/DAZN_4/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="DAZN5.uk@Portugal" tvg-logo="https://i.imgur.com/HD2XaeS.png",DAZN 5 (720p)
+http://23.237.104.106:8080/DAZN_5/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="DeportesTVC.hn@SD" tvg-logo="https://i.imgur.com/Y1t8xkL.png",Deportes TVC (1080p)
 http://162.19.255.233:8080/play/UNbAl57p9hXZClOu56FCTYXmD-MOS3u5IUkeXPpBt80/m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="DigiSport2.ro@HD" tvg-logo="https://i.imgur.com/KWDUi3v.png",Digi Sport 2 HD (1080i)
@@ -64,8 +70,8 @@ https://d12a2vxqkkh1bo.cloudfront.net/hls/main.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="FoxSports2.ar@SD" tvg-logo="https://i.imgur.com/oG7HzEf.png" http-referrer="https://mi.tv/ar/canales/fox-sports-2",Fox Sports 2 (Argentina) (576i)
 #EXTVLCOPT:http-referrer=https://mi.tv/ar/canales/fox-sports-2
 https://zapster.trapemn.tv:1936/CD-LATAM/FoxSports2/playlist.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="Futbol.tj@SD" tvg-logo="https://i.imgur.com/RngmCDn.png",Futbol (1080p)
-https://live.teleradiocom.tj/8/3m.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="FoxDeportes.us@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/FOX_Deportes_logo.png/960px-FOX_Deportes_logo.png",Fox Deportes (720p)
+http://23.237.104.106:8080/USA_FOX_DEPORTES/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="GolfPlus.fr@SD" tvg-logo="https://i.imgur.com/WHnddkg.png",Golf + (1080p) [Geo-blocked]
 http://tv.streambox.fr/live/testlivestream/testlivestream/49.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="HardKnocks.ca@SD" tvg-logo="https://i.imgur.com/nt9B6jx.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0",Hard Knocks (1080p)
@@ -105,8 +111,6 @@ http://162.250.201.58:6211/pk/ONEGOLF/index.m3u8
 http://92.114.85.87:8016/play/a00b/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="PTVSports.pk@SD" tvg-logo="https://i.imgur.com/CPm6GHA.png",PTV Sports (1080p)
 http://103.250.28.74:8000/play/a019/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="PXSports.mx@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/PX_Sports_-_Logo.png/960px-PX_Sports_-_Logo.png",PX Sports (1080p)
-http://38.252.238.18:8000/play/a02f/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Racingcom.au@SD" tvg-logo="https://i.imgur.com/Q55HX1O.png",Racing.com (720p)
 https://racingvic-i.akamaized.net/hls/live/598695/racingvic/index1500.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="RadioTurrialbaTVSports.cr@SD" tvg-logo="https://i.imgur.com/2ZcUXbE.png" http-referrer="https://iblups.com/" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",Radio Turrialba TV Sports (720p) [Not 24/7]
@@ -188,18 +192,10 @@ https://live20.bozztv.com/akamaissh101/ssh101/livetigocr/playlist.m3u8
 http://45.167.2.101:8000/play/a0pp/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="TigoSports.gt@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Tigo_Sports_2025.png/960px-Tigo_Sports_2025.png",Tigo Sports (Guatemala) (1080p)
 http://45.5.119.43:4000/play/a05t/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="TNTSports1.uk@SD" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tnt-sports-1-uk.png?raw=true",TNT Sports 1
-http://37.49.224.5:80/stream/1/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="TNTSports2.uk@SD" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tnt-sports-2-uk.png?raw=true",TNT Sports 2
-http://37.49.224.5:80/stream/2/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="TNTSports3.uk@SD" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tnt-sports-3-uk.png?raw=true",TNT Sports 3
-http://37.49.224.5:80/stream/3/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="TNTSports4.uk@SD" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tnt-sports-4-uk.png?raw=true",TNT Sports 4
-http://37.49.224.5:80/stream/4/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="TigoSports.hn@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Tigo_Sports_2025.png/960px-Tigo_Sports_2025.png",Tigo Sports (Honduras) (1080p)
+http://168.196.127.137:6001/play/a0ay/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="TRTSpor.tr@SD" tvg-logo="https://i.imgur.com/6tv0zxh.png",TRT Spor (720p)
 https://corestream.siteyaptim.live/trt-spor/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="TSN4.ca@SD" tvg-logo="https://i.imgur.com/qJyAWU8.png",TSN4 (720p)
-http://109.104.153.220:80/TSN-4/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="TVMaticFight.br@SD" tvg-logo="https://i.imgur.com/l5PBcKN.png",TVMatic Fight (720p)
 http://cdn.tvmatic.net/fight.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="TVPSport.pl@SD" tvg-logo="https://i.imgur.com/JUZDOCO.png",TVP Sport (1080p)
