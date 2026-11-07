@@ -1,0 +1,56 @@
+{
+ "built_utc": "2026-11-07 06:15",
+ "seconds": 175,
+ "size_bytes": 14828727,
+ "programmes": 225495,
+ "sources": {
+  "pluto": true,
+  "samsung": true,
+  "roku": true,
+  "dk1": true,
+  "grab": true,
+  "uk1": true,
+  "de1": true,
+  "us2": true,
+  "ussports": true,
+  "all": true,
+  "plex": true
+ },
+ "matched_by_source": {
+  "pluto": 1150,
+  "samsung": 10,
+  "roku": 1,
+  "dk1": 5,
+  "grab": 75,
+  "uk1": 25,
+  "de1": 44,
+  "us2": 89,
+  "all": 1180,
+  "grab:name": 3,
+  "uk1:name": 23,
+  "de1:name": 1,
+  "us2:name": 61,
+  "all:name": 266,
+  "plex:name": 23,
+  "roku:name": 50,
+  "pluto:name": 13,
+  "samsung:name": 92
+ },
+ "lists": {
+  "iptv-org-dansk-all.m3u": {
+   "tvg_ids": 147,
+   "with_guide": 144,
+   "with_programmes_today": 144
+  },
+  "sport.m3u": {
+   "tvg_ids": 393,
+   "with_guide": 226,
+   "with_programmes_today": 225
+  },
+  "iptv-org-index-all.m3u": {
+   "tvg_ids": 9656,
+   "with_guide": 3111,
+   "with_programmes_today": 3106
+  }
+ }
+}
