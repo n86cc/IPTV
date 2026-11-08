@@ -228,11 +228,14 @@ def main():
                 want[(key, sid)].append(tid); matched[tid] = key + ":name"
 
     # stream programmes, rewrite channel id, keep window
+    # Dedup pairs with the same channel, start, stop and title; keep the richer copy.
+    # Same timeslot with different titles (e.g. translations) is kept as unique.
     tmp = a.out + ".tmp"
     have = collections.Counter()           # tvg-id -> programmes written
     today = collections.Counter()
-    dk_today = now.astimezone(dt.timezone(dt.timedelta(hours=1))).date()
-    nprog = 0
+    tz1 = dt.timezone(dt.timedelta(hours=1))
+    dk_today = now.astimezone(tz1).date()
+    best = collections.OrderedDict()       # (tid, start, stop, title) -> (score, line, s, e)
     with gzip.open(tmp, "wt", encoding="utf-8", compresslevel=9) as out:
         out.write('<?xml version="1.0" encoding="UTF-8"?>\n')
         out.write('<tv generator-info-name="n86cc/IPTV build_guide.py" '
@@ -257,11 +260,22 @@ def main():
                     if s and (e or s) > lo and s < hi:
                         for tid in tids:
                             el.set("channel", tid)
-                            out.write(ET.tostring(el, encoding="unicode").strip() + "\n")
-                            have[tid] += 1; nprog += 1
-                            if s.astimezone(dt.timezone(dt.timedelta(hours=1))).date() == dk_today or (s <= now and (e or s) >= now):
-                                today[tid] += 1
+                            line = ET.tostring(el, encoding="unicode").strip() + "\n"
+                            title_el = el.find("title")
+                            title = (title_el.text or "") if title_el is not None else ""
+                            dkey = (tid, el.get("start"), el.get("stop"), title)
+                            score = (len(line), len(list(el)))
+                            prev = best.get(dkey)
+                            if prev is None or score > prev[0]:
+                                best[dkey] = (score, line, s, e)
                 el.clear()
+        nprog = 0
+        for (tid, _st, _sp, _title), (_score, line, s, e) in best.items():
+            out.write(line)
+            have[tid] += 1
+            nprog += 1
+            if s.astimezone(tz1).date() == dk_today or (s <= now and (e or s) >= now):
+                today[tid] += 1
         out.write("</tv>\n")
     os.replace(tmp, a.out)
 
