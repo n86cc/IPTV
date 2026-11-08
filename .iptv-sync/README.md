@@ -60,6 +60,6 @@
   1. Pluto og Samsung matches på stream-URLen (`jmp2.uk/plu-<id>`, `jmp2.uk/stvp-<id>`).
   2. Andre kanaler matches på tvg-id uden `@feed`, hvor kun bogstaver og tal sammenlignes. Fx `DR1.dk@SD` = `DR1.dk` og
      `ORF1.at@SD` = `ORF.1.at`. DK1 bruges før ALL_SOURCES.
-- Kun kanaler fra de tre lister kommer med, og kun programmer fra 7 dage tilbage til 3 dage frem.
+- Kun kanaler fra de tre lister kommer med, og kun programmer fra 1 dag tilbage til 1 dag frem.
   Dubletter med samme kanal, start, stop og titel fjernes automatisk (den mest fyldige kopi beholdes).
   Hvis guiden har under 20.000 programmer, bliver den ikke udgivet.

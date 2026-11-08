@@ -22,7 +22,7 @@ Runs every 4 hours (.github/workflows/epg-guide.yml) because the Pluto/Samsung
 guides only cover roughly the next 12-18 hours. The result is force-pushed as the
 single commit of branch 'epg' (no history), so the repo does not grow.
 Only channels present in the playlists are written, and only programmes that end
-after now-7d and start before now+3d.
+after now-1d and start before now+1d.
 
 Usage: python3 build_guide.py [--repo-dir .] [--out guide.xml.gz] [--cache DIR]
 """
@@ -48,8 +48,8 @@ SOURCES = [  # (key, url) - also the priority order
 ID_SOURCES = ["dk1", "grab", "uk1", "de1", "us2", "ussports", "all"]   # normalised tvg-id, in order
 NAME_SOURCES = ["dk1", "grab", "uk1", "de1", "us2", "ussports", "all", "plex", "roku", "pluto", "samsung"]
 URL_SOURCES = {"plu": "pluto", "stvp": "samsung", "rok": "roku"}
-PAST = dt.timedelta(days=7)
-FUTURE = dt.timedelta(days=3)
+PAST = dt.timedelta(days=1)
+FUTURE = dt.timedelta(days=1)
 MIN_PROGRAMMES = 20000
 UA = "Mozilla/5.0 (n86cc/IPTV guide builder)"
 
