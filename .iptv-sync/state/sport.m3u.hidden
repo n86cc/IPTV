@@ -11,8 +11,6 @@ http://209.14.115.253:8081/azteca-deportes/index.m3u8
 http://31.148.48.15/Boks_TV/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="CanaldoInter.br@SD" tvg-logo="https://i.imgur.com/TQFWEIS.png",Canal do Inter (720p) [Not 24/7]
 https://video01.soultv.com.br/internacional/internacional/playlist.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="CanalPlusSport.fr@SD" tvg-logo="https://i.imgur.com/EOXnU15.png",Canal+ Sport (1080p) [Geo-blocked]
-http://tv.streambox.fr/live/testlivestream/testlivestream/31.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="CBCSport.az@HD" tvg-logo="https://i.imgur.com/3mEdjuq.png",CBC Sport [Geo-blocked]
 https://mn-nl.mncdn.com/cbcsports_live/cbcsports/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Combate.br@SD" tvg-logo="https://i.imgur.com/ZPYK5jr.png",Combate (720p)
@@ -68,8 +66,6 @@ https://d12a2vxqkkh1bo.cloudfront.net/hls/main.m3u8
 https://zapster.trapemn.tv:1936/CD-LATAM/FoxSports2/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="FoxDeportes.us@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/FOX_Deportes_logo.png/960px-FOX_Deportes_logo.png",Fox Deportes (720p)
 http://23.237.104.106:8080/USA_FOX_DEPORTES/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="GolfPlus.fr@SD" tvg-logo="https://i.imgur.com/WHnddkg.png",Golf + (1080p) [Geo-blocked]
-http://tv.streambox.fr/live/testlivestream/testlivestream/49.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="HardKnocks.ca@SD" tvg-logo="https://i.imgur.com/nt9B6jx.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0",Hard Knocks (1080p)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0
 https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/Hard-Knocks-DistroTV/109.m3u8?ads.vf=6pOF6kgy418
