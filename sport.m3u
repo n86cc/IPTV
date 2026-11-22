@@ -160,8 +160,6 @@ https://stmv2.voxtvhd.com.br/crtvchile/crtvchile/playlist.m3u8
 https://live1.acangroup.org:1929/publiclive/crtv_sport/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="CTSport.cz@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/%C4%8CT_sport_logo.png/960px-%C4%8CT_sport_logo.png",CT Sport (720p)
 http://88.212.15.50/live/test_ctsport_25p/playlist.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="DAZN3.uk@Portugal" tvg-logo="https://i.imgur.com/2rXsq2m.png",DAZN 3 Portugal (720p)
-http://23.237.104.106:8080/DAZN_3/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="DAZNCombat.uk@SD" tvg-logo="https://i.postimg.cc/VsW3Jsrz/logo-DAZN-Combat.png",DAZN Combat (684p)
 https://jmp2.uk/plu-64d626ac9b414d000820e2fc.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="DAZNDartsxPlutoTV.de@DACH" tvg-logo="https://images.pluto.tv/channels/64b67f0424ade50008a3be17/colorLogoPNG.png",DAZN Darts x Pluto TV
@@ -302,9 +300,9 @@ http://45.134.141.161:2200/ARG/Eurosport_2_HD/index.m3u8
 https://r.eu.cdn-redge.media/livehls/oeu/mt/live/eurosport_2_en/live.livx/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Eurosport3Polska.pl@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/da/Eurosport_3_2022.svg/revision/latest?cb=20220418054130",Eurosport 3 Polska (1080p)
 https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fvavoo.to%2Fvavoo-iptv%2Fplay%2F5121596371c5191ed9b35
-#EXTINF:-1 group-title="Sport" tvg-id="Eurosport4K.fr@Romania" tvg-logo="https://i.imgur.com/0o3zjC7.png",Eurosport 4K Romania (2160p) [Geo-blocked]
+#EXTINF:-1 group-title="Sport" tvg-id="Eurosport4K.fr@Romania" tvg-logo="https://web02.antik.sk/assets/img/channels/645a85b97a8257d6702639d6e540fe5b.svg",Eurosport 4K Romania (2160p) [Geo-blocked]
 https://vip-acasatv.online:25463/lrZuGxAuP3/6782859900/5449.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="Eurosport4KCzechia.cz@UHD" tvg-logo="https://i.imgur.com/0o3zjC7.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",Eurosport 4K Czechia
+#EXTINF:-1 group-title="Sport" tvg-id="Eurosport4KCzechia.cz@UHD" tvg-logo="https://web02.antik.sk/assets/img/channels/645a85b97a8257d6702639d6e540fe5b.svg" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",Eurosport 4K Czechia
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36
 http://88.212.15.50/live/esp_4k_atk/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Eurosport4Polska.pl@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/a/ae/Eurosport_4_2022.svg/revision/latest?cb=20220418053934",Eurosport 4 Polska (1080p)
@@ -514,8 +512,6 @@ https://fastly.live.brightcove.com/6374054671112/eu-west-1/6058004203001/eyJhbGc
 https://a-cdn.klowdtv.com/live2/nautical_720p/playlist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="NBAAntenaPlay.ro@SD" tvg-logo="https://assets.antenaplay.ro/2024/10/25/HmBMStln2f1qwN0tAXpG.png",NBA AntenaPlay (576p)
 https://stream1.antenaplay.ro/promo/nba-meci/playlist.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="NBATV.us@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/NBA_TV.svg/960px-NBA_TV.svg.png",NBA TV (720p)
-http://23.237.104.106:8080/USA_NBA/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="NBCSportsNOW.us@SD" tvg-logo="https://i.imgur.com/EzNf2Yx.png",NBC Sports NOW (1080p)
 https://d4whmvwm0rdvi.cloudfront.net/10007/99993008/hls/master.m3u8?ads.xumo_channelId=99993008
 #EXTINF:-1 group-title="Sport" tvg-id="NFLChannel.us@SD" tvg-logo="https://i.imgur.com/mPGtwAP.png",NFL Channel (720p)
@@ -597,6 +593,12 @@ https://amg19223-amg19223c3-amgplt0351.playout.now3.amagi.tv/playlist/amg19223-a
 https://rundle.tv/proxy5.php?src=https%3A%2F%2Firon1.xn--x2rw19a.space%2Fpuk1%2Fusergenrx0cir27aq-got.htm
 #EXTINF:-1 group-title="Sport" tvg-id="PrimaSport2.ro@HD" tvg-logo="https://i.imgur.com/hROcepe.png",Prima Sport 2 HD
 https://rundle.tv/proxy5.php?src=https%3A%2F%2Firon1.xn--x2rw19a.space%2Fpuk2%2Fusergenrnd0clv03fyt-got.htm
+#EXTINF:-1 group-title="Sport" tvg-id="PrimaSport3.ro@HD" tvg-logo="https://static.wikia.nocookie.net/tvfanon6528/images/9/9a/Prima_Sport_3_%282022-.n.v.%29.png/revision/latest/scale-to-width-down/1000?cb=20240205122802",Prima Sport 3 HD
+https://rundle.tv/proxy5.php?src=https%3A%2F%2Firon1.xn--x2rw19a.space%2Fpuk3%2Fusergenrx4t0l8sybkr-got.htm
+#EXTINF:-1 group-title="Sport" tvg-id="PrimaSport4.ro@HD" tvg-logo="https://i.imgur.com/lqaIIhc.png",Prima Sport 4 HD
+https://rundle.tv/proxy5.php?src=https%3A%2F%2Fpulse1.sanseny001.shop%2Fpuk4%2Fusergendx3j2x4tqrnd-got.htm
+#EXTINF:-1 group-title="Sport" tvg-id="PrimaSport5.ro@HD" tvg-logo="https://www.media-max.ro/wp-content/uploads/2022/11/Prima-Sport-5-HD-disponibil-in-grila-Vodafone.jpg",Prima Sport 5 HD
+https://rundle.tv/proxy5.php?src=https%3A%2F%2Fpulse1.sanseny001.shop%2Fpuk5%2Fusergen0grnd8l2y6gw-got.htm
 #EXTINF:-1 group-title="Sport" tvg-id="PrimaSportCzechia.cz@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/6/69/Prima_Sport_%28Czech_Republic%29.svg/revision/latest?cb=20260728085614",Prima Sport Czechia
 http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/prima_sport/live_mq?offsetSeconds=0
 #EXTINF:-1 group-title="Sport" tvg-id="PrimaSportPPV1.ro@SD" tvg-logo="https://www.primaplay.ro/uploads/thumb/publisher/b05ce5d64523401d0fc3225c5b629019.png",Prima Sport PPV 1
@@ -839,6 +841,8 @@ https://af7a8b4e.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctZ2
 http://103.151.60.162:2122/play/a0fj/index.m3u8?hls
 #EXTINF:-1 group-title="Sport" tvg-id="TAPSports.ph@SD" tvg-logo="https://i.imgur.com/4GmuJMD.png",TAP Sports (1080p) [Geo-blocked]
 https://amg19223-amg19223c2-amgplt0351.playout.now3.amagi.tv/playlist/amg19223-amg19223c2-amgplt0351/playlist.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="Teledeporte.es@SD" tvg-logo="https://i.ibb.co/0jxLdjnY/TDP.png",Teledeporte (720p) [Geo-blocked]
+https://rtvelivestream.rtve.es/rtvesec/tdp/tdp_main.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="TennisChannel2.us@SD" tvg-logo="https://image-resizer-cloud-cdn.api.cms.amdvids.com/image/7382296F-97F6-4450-B77B-8FE331FC04F6/3-1x1.png",Tennis Channel 2 (1080p)
 https://mumbai-edge.smartplaytv.in/Tennis2/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="TennisChannel.us@SD" tvg-logo="https://i.imgur.com/tsljAnY.png",Tennis Channel (1080p)
