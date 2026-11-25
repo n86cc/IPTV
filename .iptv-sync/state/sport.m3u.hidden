@@ -26,6 +26,8 @@ http://86.192.195.47:9034/stream/8/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="beINSports8.qa@MENA" tvg-logo="https://i.imgur.com/CaFEyVn.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",beIN Sports 8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
 http://86.192.195.47:9034/stream/9/index.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="AztecaDeportesNetwork.mx@SD" tvg-logo="https://match-images.icdb.tv/5913207f2494844101287828e87625eb.jpg",Azteca Deportes Network (720p)
+http://38.194.226.190:8000/play/a02r/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Belarus5.by@HD" tvg-logo="https://i.imgur.com/NJsRFud.png",Belarus-5 HD (1080p)
 http://178.124.179.122:8080/BT5/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="BoksTV.ru@SD" tvg-logo="https://i.imgur.com/R1UjyfX.png",Boks TV (720p)
@@ -51,8 +53,6 @@ http://sultanios.alwaysdata.net/vavo.php?ID=3174529991
 http://sultanios.alwaysdata.net/vavo.php?ID=867728420
 #EXTINF:-1 group-title="Sport" tvg-id="DigiSport3.ro@HD" tvg-logo="https://i.imgur.com/T1ci5UK.png",Digi Sport 3 HD
 http://sultanios.alwaysdata.net/vavo.php?ID=4279401658
-#EXTINF:-1 group-title="Sport" tvg-id="DigiSport4.ro@SD" tvg-logo="https://i.imgur.com/Knj9I6f.png",Digi Sport 4
-http://sultanios.alwaysdata.net/vavo.php?ID=4124538275
 #EXTINF:-1 group-title="Sport" tvg-id="DeporTV.ar@SD" tvg-logo="https://i.imgur.com/THk9ARS.png",DeporTV (1080p)
 http://158.172.155.130:8000/play/a09y/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="DSports.us@Panregional" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/DirecTV_Sports_Latin_America_%282018%29.png/960px-DirecTV_Sports_Latin_America_%282018%29.png",DSports (1080p)
@@ -100,6 +100,8 @@ http://46.32.176.50/extremesport/index.m3u8
 https://d12a2vxqkkh1bo.cloudfront.net/hls/main.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="FormulaAcademyAntenaPlay.ro@SD" tvg-logo="https://assets.antenaplay.ro/2024/02/28/1o8H6fCMh1DSC2vuLjo8.png",Formula Academy AntenaPlay (576p) [Not 24/7]
 https://stream1.antenaplay.ro/promo/f1-academy-las-vegas-20-2211/chunklist.m3u8
+#EXTINF:-1 group-title="Sport" tvg-id="Formula2AntenaPlay.ro@SD" tvg-logo="https://assets.antenaplay.ro/2024/02/28/YW9VML2K4hpFUKMHme97.png",Formula 2 AntenaPlay (576i) [Not 24/7]
+https://stream1.antenaplay.ro/promo/formula-2-qatar/chunklist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="FoxSports2.us@HD" tvg-logo="https://imgx.fubo.tv/station_logos/fs2_c.png",Fox Sports 2 (720p)
 https://tvsen7.aynascope.net/foxsports2/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="HardKnocks.ca@SD" tvg-logo="https://i.imgur.com/nt9B6jx.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0",Hard Knocks (1080p)
@@ -131,8 +133,6 @@ http://31.148.48.15/M1_Global/index.m3u8
 https://stream.digitalgt.com:3605/live/multivisionsportslive.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="NSports.br@SD" tvg-logo="https://i.imgur.com/7QnJojr.png",N Sports (1080p)
 https://ogc-nsprt-tcl-roku-syndication.otteravision.com/ogc/nsprt/nsprt.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="NHLAntenaPlay.ro@SD" tvg-logo="https://assets.antenaplay.ro/2024/10/25/SN0nevshXwKDcZ2Tw1jm.png",NHL AntenaPlay (576i) [Not 24/7]
-https://stream1.antenaplay.ro/promo/nhl-12-1411/chunklist.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="OkkoFutbol.ru@SD" tvg-logo="https://xml-epgservice.cdnvideo.ru/EPGService/hs/xmldata/852f4b92-cae5-463e-aad6-cd8844c5a49/logo/8986.png",Okko Futbol (576p)
 http://178.124.179.122:8080/Setanta1/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="OneGolf.pk@SD" tvg-logo="https://i.imgur.com/7JhaEW5.png",One Golf (720p)
@@ -274,8 +274,6 @@ http://dtv.vol.net.ua/UPL-TV/index.m3u8
 http://200.32.231.178/USA_NETWORK/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="VitalDrive.ru@HD" tvg-logo="https://i.imgur.com/XoR9zLh.png",Vital Drive
 https://autopilot.catcast.tv/content/37909/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="WAPATV42.pr@HD" tvg-logo="https://i.imgur.com/5WNBFmp.png",WAPA-TV 4.2 (720p) [Not 24/7]
-https://wapa.hostless.app/WAPA-TV-4-2.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="Willow.us@SD" tvg-logo="https://cricket.willow.tv/_nuxt/img/willow_blue_logo.362ed8e.png",Willow (720p)
 http://tvsen5.aynascope.net/willowhd/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="AdriaticSport1.ba@SD" tvg-logo="https://channels2.digital.ugbb.net/wp-content/uploads/2022/04/logo-adriatic-sport-1.png",Adriatic Sport 1
