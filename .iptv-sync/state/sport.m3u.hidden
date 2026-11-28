@@ -47,8 +47,6 @@ http://50.7.120.34:8080/DAZN1/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="DAZN2.uk@Germany" tvg-logo="https://i.imgur.com/OGj3qf5.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",DAZN 2 Germany
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
 http://45.142.104.86/stream/15/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="DAZNF1.uk@Spain" tvg-logo="https://i.imgur.com/yFCr5XX.png",DAZN F1
-https://tvorb.net/ZTV/6918-live.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="DigiSport1.ro@HD" tvg-logo="https://i.imgur.com/5zMxDYq.png",Digi Sport 1 HD
 http://sultanios.alwaysdata.net/vavo.php?ID=3174529991
 #EXTINF:-1 group-title="Sport" tvg-id="DigiSport2.ro@HD" tvg-logo="https://i.imgur.com/KWDUi3v.png",Digi Sport 2 HD
@@ -110,9 +108,6 @@ https://tvsen7.aynascope.net/foxsports2/index.m3u8
 http://138.59.227.20:8000/play/a085/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="GolfChannel.us@SD" tvg-logo="https://i.imgur.com/Lgux6Ik.png",Golf Channel (United States) (576p)
 https://tvsen6.aynaott.com/golfchannel/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="HardKnocks.ca@SD" tvg-logo="https://i.imgur.com/nt9B6jx.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0",Hard Knocks (1080p)
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0
-https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/Hard-Knocks-DistroTV/109.m3u8?ads.vf=6pOF6kgy418
 #EXTINF:-1 group-title="Sport" tvg-id="JiangsuSportsLeisureChannel.cn@SD" tvg-logo="https://www.tvchinese.net/uploads/tv/jsty.jpg",Jiangsu Sports & Leisure Channel (576p)
 http://183.207.248.71/gitv/live1/G_JSTY/G_JSTY
 #EXTINF:-1 group-title="Sport" tvg-id="KHL.ru@SD" tvg-logo="https://i.imgur.com/RgdHdOV.png",KHL (720p)
@@ -125,8 +120,6 @@ http://87.229.103.60:1935/liverelay/loverseny2.sdp/playlist.m3u8
 http://31.148.48.15/Match_Arena_HD/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="MatchIgra.ru@SD" tvg-logo="https://i.imgur.com/5XWpF19.png",Match! Igra (720p)
 http://31.148.48.15/Match_Igra_HD/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="MatchPlaneta.ru@SD" tvg-logo="https://i.imgur.com/vhyMb9D.png",Match! Planeta (576p)
-http://s1.merlive.am/matchplaneta/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="MatchStrana.ru@SD" tvg-logo="https://i.imgur.com/X02s2UE.png",Match! Strana (720p)
 http://31.148.48.15/Match_Strana/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="MEGOGOSport.ua@SD" tvg-logo="https://i.imgur.com/5JmT4mW.png",MEGOGO Sport (1080p)
@@ -266,8 +259,6 @@ http://37.49.224.5/stream/2/index.m3u8
 http://37.49.224.5/stream/3/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="TNTSports4.uk@SD" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tnt-sports-4-uk.png?raw=true",TNT Sports 4
 http://37.49.224.5/stream/4/index.m3u8
-#EXTINF:-1 group-title="Sport" tvg-id="TNTSportsPremium.cl@HD" tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/TNT_Sports_Premium_%28Argentina%29.png/960px-TNT_Sports_Premium_%28Argentina%29.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=thumbnail",TNT Sports Premium HD
-https://play-fulltv.com.ar/playtvpre/tntsportschile.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="TRTSpor.tr@SD" tvg-logo="https://i.imgur.com/6tv0zxh.png",TRT Spor (720p)
 https://corestream.siteyaptim.live/trt-spor/index.m3u8
 #EXTINF:-1 group-title="Sport" tvg-id="TSN4.ca@SD" tvg-logo="https://i.imgur.com/qJyAWU8.png",TSN4 (720p)
